@@ -178,10 +178,6 @@
   position: relative;
 }
 
-[data-theme="nier"] header.nier-card {
-  margin-left: 1rem;
-  margin-right: 1rem;
-}
 
 [data-theme="nier"] .nier-card-header {
   background-color: var(--nier-dark);

@@ -21,21 +21,7 @@ export default tseslint.config([
     },
     rules: {
       'semi': ['error', 'always'],
-      '@typescript-eslint/semi': ['error', 'always'],
-      
       'indent': ['error', 'tab'],
-      '@typescript-eslint/indent': ['error', 'tab'],
-      
-      '@typescript-eslint/member-delimiter-style': ['error', {
-        multiline: {
-          delimiter: 'semi',
-          requireLast: true,
-        },
-        singleline: {
-          delimiter: 'semi',
-          requireLast: false,
-        },
-      }],
     },
   },
 ])

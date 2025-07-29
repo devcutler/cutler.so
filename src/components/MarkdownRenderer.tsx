@@ -11,32 +11,32 @@ interface MarkdownRendererProps {
 }
 
 export function MarkdownRenderer({ content, className = '' }: MarkdownRendererProps) {
-  const [html, setHtml] = useState<string>('');
+	const [html, setHtml] = useState<string>('');
 
-  useEffect(() => {
-    async function processMarkdown() {
-      try {
-        const result = await remark()
-          .use(remarkGfm)
-          .use(remarkGemoji)
-          .use(remarkRehype)
-          .use(rehypeStringify)
-          .process(content);
+	useEffect(() => {
+		async function processMarkdown() {
+			try {
+				const result = await remark()
+					.use(remarkGfm)
+					.use(remarkGemoji)
+					.use(remarkRehype)
+					.use(rehypeStringify)
+					.process(content);
         
-        setHtml(String(result));
-      } catch (error) {
-        console.error('Error processing markdown:', error);
-        setHtml('<p>Error rendering content</p>');
-      }
-    }
+				setHtml(String(result));
+			} catch (error) {
+				console.error('Error processing markdown:', error);
+				setHtml('<p>Error rendering content</p>');
+			}
+		}
 
-    processMarkdown();
-  }, [content]);
+		processMarkdown();
+	}, [content]);
 
-  return (
-    <div 
-      className={`prose prose-lg max-w-none ${className}`}
-      dangerouslySetInnerHTML={{ __html: html }}
-    />
-  );
+	return (
+		<div 
+			className={`prose prose-lg max-w-none ${className}`}
+			dangerouslySetInnerHTML={{ __html: html }}
+		/>
+	);
 }
