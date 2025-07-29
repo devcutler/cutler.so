@@ -1,9 +1,9 @@
 {
-  "slug": "/about/experience",
-  "title": "Experience",
-  "description": "My professional experience",
-  "tags": [],
-  "content": "\n# Experience\n\nMy work experience.",
-  "path": "about/experience.md",
-  "length": 34
+	"slug": "/about/experience",
+	"title": "Experience",
+	"description": "My professional experience",
+	"tags": [],
+	"content": "\n# Experience\n\nMy work experience.",
+	"path": "about/experience.md",
+	"length": 34
 }

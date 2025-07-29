@@ -4,36 +4,39 @@ import matter from 'gray-matter';
 import RSS from 'rss';
 
 interface ContentItem {
-  slug: string;
-  title: string;
-  description: string;
-  date?: string;
-  tags?: string[];
-  content: string;
-  path: string;
-  length: number;
+	slug: string;
+	title: string;
+	description: string;
+	date?: string;
+	tags?: string[];
+	content: string;
+	path: string;
+	length: number;
 }
 
 interface ContentManifest {
-  pages: ContentItem[];
-  blog: ContentItem[];
+	pages: ContentItem[];
+	blog: ContentItem[];
 }
 
 interface ContentIndex {
-  pages: ContentIndexItem[];
-  blog: ContentIndexItem[];
+	pages: ContentIndexItem[];
+	blog: ContentIndexItem[];
 }
 
 interface ContentIndexItem {
-  slug: string;
-  title: string;
-  description: string;
-  date?: string;
-  tags?: string[];
-  length: number;
+	slug: string;
+	title: string;
+	description: string;
+	date?: string;
+	tags?: string[];
+	length: number;
 }
 
-function processMarkdownFile(filePath: string, relativePath: string): ContentItem {
+function processMarkdownFile(
+	filePath: string,
+	relativePath: string
+): ContentItem {
 	const content = fs.readFileSync(filePath, 'utf-8');
 	const { data, content: markdownContent } = matter(content);
 
@@ -117,13 +120,23 @@ function main() {
 				fs.copyFileSync(srcPath, destPath);
 			}
 		});
-		console.log(`Copied ${publicFiles.length} static assets from public/ to dist/`);
+		console.log(
+			`Copied ${publicFiles.length} static assets from public/ to dist/`
+		);
 	}
 
 	const allContent = processDirectory(contentDir, contentDir);
 
-	const blog = allContent.filter(item => item.path.startsWith('blog/') && !item.path.endsWith('blog/index.md'));
-	const pages = allContent.filter(item => !item.path.startsWith('blog/') || item.path.endsWith('blog/index.md'));
+	const blog = allContent.filter(
+		item =>
+			item.path.startsWith('blog/') &&
+			!item.path.endsWith('blog/index.md')
+	);
+	const pages = allContent.filter(
+		item =>
+			!item.path.startsWith('blog/') ||
+			item.path.endsWith('blog/index.md')
+	);
 
 	blog.sort((a, b) => {
 		if (!a.date && !b.date) return 0;
@@ -133,7 +146,8 @@ function main() {
 	});
 
 	[...pages, ...blog].forEach(item => {
-		const filename = item.slug.replace(/\//g, '_').replace(/^_/, '') + '.json';
+		const filename =
+			item.slug.replace(/\//g, '_').replace(/^_/, '') + '.json';
 		const filePath = path.join(distContentDir, filename);
 		fs.writeFileSync(filePath, JSON.stringify(item, null, 2));
 	});
@@ -145,7 +159,7 @@ function main() {
 			description: item.description,
 			date: item.date,
 			tags: item.tags,
-			length: item.length
+			length: item.length,
 		})),
 		blog: blog.map(item => ({
 			slug: item.slug,
@@ -153,8 +167,8 @@ function main() {
 			description: item.description,
 			date: item.date,
 			tags: item.tags,
-			length: item.length
-		}))
+			length: item.length,
+		})),
 	};
 
 	const indexContent = JSON.stringify(contentIndex, null, 2);
@@ -164,10 +178,7 @@ function main() {
 		indexContent
 	);
 
-	fs.writeFileSync(
-		path.join(distDir, 'content-index.json'),
-		indexContent
-	);
+	fs.writeFileSync(path.join(distDir, 'content-index.json'), indexContent);
 
 	const manifest: ContentManifest = { pages, blog };
 	const manifestContent = JSON.stringify(manifest, null, 2);
@@ -188,7 +199,8 @@ function main() {
 		blog.forEach(post => {
 			feed.item({
 				title: post.title,
-				description: post.description || post.content.substring(0, 200) + '...',
+				description:
+					post.description || post.content.substring(0, 200) + '...',
 				url: `https://cutler.so${post.slug}`,
 				guid: post.slug,
 				date: post.date ? new Date(post.date) : new Date(),
@@ -206,20 +218,21 @@ function main() {
 
 	// Copy content files to public/ so Vite includes them in the build
 	const publicContentDir = path.join(publicDir, 'content');
-  
+
 	// Ensure public/content directory exists
 	fs.mkdirSync(publicContentDir, { recursive: true });
-  
+
 	// Copy content files to public/
 	[...pages, ...blog].forEach(item => {
-		const filename = item.slug.replace(/\//g, '_').replace(/^_/, '') + '.json';
+		const filename =
+			item.slug.replace(/\//g, '_').replace(/^_/, '') + '.json';
 		const srcPath = path.join(distContentDir, filename);
 		const destPath = path.join(publicContentDir, filename);
 		if (fs.existsSync(srcPath)) {
 			fs.copyFileSync(srcPath, destPath);
 		}
 	});
-  
+
 	// Copy index files to public/
 	if (fs.existsSync(path.join(distDir, 'content-index.json'))) {
 		fs.copyFileSync(
@@ -227,7 +240,7 @@ function main() {
 			path.join(publicDir, 'content-index.json')
 		);
 	}
-  
+
 	if (fs.existsSync(path.join(distDir, 'rss.xml'))) {
 		fs.copyFileSync(
 			path.join(distDir, 'rss.xml'),
@@ -235,8 +248,12 @@ function main() {
 		);
 	}
 
-	console.log(`Processed ${pages.length} pages and ${blog.length} blog posts`);
-	console.log(`Created ${pages.length + blog.length} individual content files`);
+	console.log(
+		`Processed ${pages.length} pages and ${blog.length} blog posts`
+	);
+	console.log(
+		`Created ${pages.length + blog.length} individual content files`
+	);
 	console.log(`Copied content files to public/ for Vite build`);
 }
 

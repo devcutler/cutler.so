@@ -20,20 +20,44 @@ function AppContent() {
 		return (
 			<div className="min-h-screen flex items-center justify-center">
 				<div className="max-w-md mx-auto text-center p-6">
-					<div className="text-4xl mb-4" style={{ color: 'var(--error-color, #ef4444)' }}>⚠️</div>
-					<h1 className="text-xl font-bold mb-2" style={{ color: 'var(--error-color, #dc2626)' }}>Failed to load content</h1>
-					<p className="mb-4" style={{ color: 'var(--error-color, #ef4444)' }}>{error}</p>
+					<div
+						className="text-4xl mb-4"
+						style={{ color: 'var(--error-color, #ef4444)' }}
+					>
+						⚠️
+					</div>
+					<h1
+						className="text-xl font-bold mb-2"
+						style={{ color: 'var(--error-color, #dc2626)' }}
+					>
+						Failed to load content
+					</h1>
+					<p
+						className="mb-4"
+						style={{ color: 'var(--error-color, #ef4444)' }}
+					>
+						{error}
+					</p>
 					<button
 						onClick={() => window.location.reload()}
 						className="text-white px-4 py-2 rounded transition-colors"
-						style={{ 
+						style={{
 							backgroundColor: 'var(--error-color, #ef4444)',
-							':hover': { backgroundColor: 'var(--error-color-hover, #dc2626)' }
+							':hover': {
+								backgroundColor:
+									'var(--error-color-hover, #dc2626)',
+							},
 						}}
-						onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'var(--error-color-hover, #dc2626)'}
-						onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'var(--error-color, #ef4444)'}
+						onMouseEnter={e =>
+							(e.currentTarget.style.backgroundColor =
+								'var(--error-color-hover, #dc2626)')
+						}
+						onMouseLeave={e =>
+							(e.currentTarget.style.backgroundColor =
+								'var(--error-color, #ef4444)')
+						}
 					>
-            Retry
+						Retry
 					</button>
 				</div>
 			</div>
@@ -42,12 +66,12 @@ function AppContent() {
 
 	const getBackgroundClasses = () => {
 		switch (theme) {
-		case 'terminal':
-			return 'min-h-screen';
-		case 'neumorphic':
-			return 'min-h-screen';
-		default:
-			return 'min-h-screen';
+			case 'terminal':
+				return 'min-h-screen';
+			case 'neumorphic':
+				return 'min-h-screen';
+			default:
+				return 'min-h-screen';
 		}
 	};
 

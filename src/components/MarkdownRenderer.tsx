@@ -6,11 +6,14 @@ import remarkRehype from 'remark-rehype';
 import rehypeStringify from 'rehype-stringify';
 
 interface MarkdownRendererProps {
-  content: string;
-  className?: string;
+	content: string;
+	className?: string;
 }
 
-export function MarkdownRenderer({ content, className = '' }: MarkdownRendererProps) {
+export function MarkdownRenderer({
+	content,
+	className = '',
+}: MarkdownRendererProps) {
 	const [html, setHtml] = useState<string>('');
 
 	useEffect(() => {
@@ -22,7 +25,7 @@ export function MarkdownRenderer({ content, className = '' }: MarkdownRendererPr
 					.use(remarkRehype)
 					.use(rehypeStringify)
 					.process(content);
-        
+
 				setHtml(String(result));
 			} catch (error) {
 				console.error('Error processing markdown:', error);
@@ -34,7 +37,7 @@ export function MarkdownRenderer({ content, className = '' }: MarkdownRendererPr
 	}, [content]);
 
 	return (
-		<div 
+		<div
 			className={`prose prose-lg max-w-none ${className}`}
 			dangerouslySetInnerHTML={{ __html: html }}
 		/>

@@ -1,9 +1,9 @@
 {
-  "slug": "/blog",
-  "title": "Blog",
-  "description": "My thoughts and writings",
-  "tags": [],
-  "content": "\n# Blog\n\nThis is the blog main page.",
-  "path": "blog/index.md",
-  "length": 36
+	"slug": "/blog",
+	"title": "Blog",
+	"description": "My thoughts and writings",
+	"tags": [],
+	"content": "\n# Blog\n\nThis is the blog main page.",
+	"path": "blog/index.md",
+	"length": 36
 }

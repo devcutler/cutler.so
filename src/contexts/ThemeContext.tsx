@@ -3,18 +3,18 @@ import type { ReactNode } from 'react';
 import type { ThemeSettings, ThemeType } from '../types/theme';
 
 interface ThemeContextType {
-  theme: ThemeType;
-  setTheme: (theme: ThemeType) => void;
-  themeClasses: string;
+	theme: ThemeType;
+	setTheme: (theme: ThemeType) => void;
+	themeClasses: string;
 }
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 const defaultSettings: ThemeSettings = {
-	theme: 'modern'
+	theme: 'modern',
 };
 
-export function ThemeProvider({ children }: { children: ReactNode; }) {
+export function ThemeProvider({ children }: { children: ReactNode }) {
 	const [settings, setSettings] = useState<ThemeSettings>(() => {
 		const saved = localStorage.getItem('theme-settings');
 		if (saved) {
@@ -23,7 +23,9 @@ export function ThemeProvider({ children }: { children: ReactNode; }) {
 				console.log('Initializing with saved theme:', parsed);
 				return { ...defaultSettings, ...parsed };
 			} catch {
-				console.warn('Failed to parse saved theme settings during initialization');
+				console.warn(
+					'Failed to parse saved theme settings during initialization'
+				);
 			}
 		}
 		console.log('Initializing with default theme:', defaultSettings);
@@ -47,11 +49,13 @@ export function ThemeProvider({ children }: { children: ReactNode; }) {
 	};
 
 	return (
-		<ThemeContext.Provider value={{
-			theme: settings.theme,
-			setTheme,
-			themeClasses: getThemeClasses()
-		}}>
+		<ThemeContext.Provider
+			value={{
+				theme: settings.theme,
+				setTheme,
+				themeClasses: getThemeClasses(),
+			}}
+		>
 			{children}
 		</ThemeContext.Provider>
 	);

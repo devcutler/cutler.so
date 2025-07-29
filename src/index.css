@@ -1,262 +1,265 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 @plugin "@tailwindcss/typography";
 
 :root {
-  --primary-blue: #3b82f6;
-  --secondary-blue: #06b6d4;
-  --accent-blue: #1e40af;
+	--primary-blue: #3b82f6;
+	--secondary-blue: #06b6d4;
+	--accent-blue: #1e40af;
 
-  --primary-green: #22c55e;
-  --secondary-green: #10b981;
-  --accent-green: #15803d;
+	--primary-green: #22c55e;
+	--secondary-green: #10b981;
+	--accent-green: #15803d;
 
-  --primary-purple: #a855f7;
-  --secondary-purple: #ec4899;
-  --accent-purple: #7c3aed;
+	--primary-purple: #a855f7;
+	--secondary-purple: #ec4899;
+	--accent-purple: #7c3aed;
 
-  --primary-orange: #f97316;
-  --secondary-orange: #ef4444;
-  --accent-orange: #ea580c;
+	--primary-orange: #f97316;
+	--secondary-orange: #ef4444;
+	--accent-orange: #ea580c;
 
-  --primary-pink: #ec4899;
-  --secondary-pink: #f43f5e;
-  --accent-pink: #db2777;
+	--primary-pink: #ec4899;
+	--secondary-pink: #f43f5e;
+	--accent-pink: #db2777;
 
-  --primary-teal: #14b8a6;
-  --secondary-teal: #06b6d4;
-  --accent-teal: #0d9488;
+	--primary-teal: #14b8a6;
+	--secondary-teal: #06b6d4;
+	--accent-teal: #0d9488;
 }
 
-[data-theme="terminal"] {
-  --bg-primary: #000000;
-  --bg-secondary: #0a0a0a;
-  --bg-tertiary: #1a1a1a;
-  --text-primary: #ffffff;
-  --text-secondary: #cccccc;
-  --text-muted: #888888;
-  --accent-color: #00ff00;
-  --border-color: transparent;
+[data-theme='terminal'] {
+	--bg-primary: #000000;
+	--bg-secondary: #0a0a0a;
+	--bg-tertiary: #1a1a1a;
+	--text-primary: #ffffff;
+	--text-secondary: #cccccc;
+	--text-muted: #888888;
+	--accent-color: #00ff00;
+	--border-color: transparent;
 }
 
-[data-theme="terminal"] body {
-  background-color: var(--bg-primary);
-  color: var(--text-primary);
-  font-family: 'Courier New', monospace;
+[data-theme='terminal'] body {
+	background-color: var(--bg-primary);
+	color: var(--text-primary);
+	font-family: 'Courier New', monospace;
 }
 
-[data-theme="terminal"] h1,
-[data-theme="terminal"] h2,
-[data-theme="terminal"] h3,
-[data-theme="terminal"] h4,
-[data-theme="terminal"] h5,
-[data-theme="terminal"] h6,
-[data-theme="terminal"] p,
-[data-theme="terminal"] a,
-[data-theme="terminal"] .prose {
-  font-family: 'Courier New', monospace;
+[data-theme='terminal'] h1,
+[data-theme='terminal'] h2,
+[data-theme='terminal'] h3,
+[data-theme='terminal'] h4,
+[data-theme='terminal'] h5,
+[data-theme='terminal'] h6,
+[data-theme='terminal'] p,
+[data-theme='terminal'] a,
+[data-theme='terminal'] .prose {
+	font-family: 'Courier New', monospace;
 }
 
-[data-theme="gnome"] {
-  --bg-primary: #300a24;
-  --bg-secondary: #2d0922;
-  --bg-tertiary: #3e0c2f;
-  --text-primary: #ffffff;
-  --text-secondary: #d0d0d0;
-  --text-muted: #888888;
-  --accent-color: #06989a;
-  --border-color: #4a4a4a;
+[data-theme='gnome'] {
+	--bg-primary: #300a24;
+	--bg-secondary: #2d0922;
+	--bg-tertiary: #3e0c2f;
+	--text-primary: #ffffff;
+	--text-secondary: #d0d0d0;
+	--text-muted: #888888;
+	--accent-color: #06989a;
+	--border-color: #4a4a4a;
 }
 
-[data-theme="gnome"] body {
-  background-color: var(--bg-primary);
-  color: var(--text-primary);
-  font-family: 'Ubuntu Mono', 'DejaVu Sans Mono', 'Liberation Mono', monospace;
+[data-theme='gnome'] body {
+	background-color: var(--bg-primary);
+	color: var(--text-primary);
+	font-family:
+		'Ubuntu Mono', 'DejaVu Sans Mono', 'Liberation Mono', monospace;
 }
 
-[data-theme="gnome"] h1,
-[data-theme="gnome"] h2,
-[data-theme="gnome"] h3,
-[data-theme="gnome"] h4,
-[data-theme="gnome"] h5,
-[data-theme="gnome"] h6,
-[data-theme="gnome"] p,
-[data-theme="gnome"] a,
-[data-theme="gnome"] .prose {
-  font-family: 'Ubuntu Mono', 'DejaVu Sans Mono', 'Liberation Mono', monospace;
+[data-theme='gnome'] h1,
+[data-theme='gnome'] h2,
+[data-theme='gnome'] h3,
+[data-theme='gnome'] h4,
+[data-theme='gnome'] h5,
+[data-theme='gnome'] h6,
+[data-theme='gnome'] p,
+[data-theme='gnome'] a,
+[data-theme='gnome'] .prose {
+	font-family:
+		'Ubuntu Mono', 'DejaVu Sans Mono', 'Liberation Mono', monospace;
 }
 
-[data-theme="modern"] {
-  --bg-primary: #ffffff;
-  --bg-secondary: #fafafa;
-  --bg-tertiary: #f4f4f5;
-  --text-primary: #09090b;
-  --text-secondary: #3f3f46;
-  --text-muted: #71717a;
-  --accent-color: #2563eb;
-  --border-color: #e4e4e7;
-  --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+[data-theme='modern'] {
+	--bg-primary: #ffffff;
+	--bg-secondary: #fafafa;
+	--bg-tertiary: #f4f4f5;
+	--text-primary: #09090b;
+	--text-secondary: #3f3f46;
+	--text-muted: #71717a;
+	--accent-color: #2563eb;
+	--border-color: #e4e4e7;
+	--shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+	--shadow-lg:
+		0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
 }
 
-[data-theme="modern"] body {
-  background-color: var(--bg-secondary);
-  color: var(--text-primary);
+[data-theme='modern'] body {
+	background-color: var(--bg-secondary);
+	color: var(--text-primary);
 }
 
-[data-theme="neumorphic"] {
-  --bg-primary: #e6e6e6;
-  --bg-secondary: #f0f0f0;
-  --bg-tertiary: #e0e0e0;
-  --text-primary: #2d3748;
-  --text-secondary: #4a5568;
-  --text-muted: #718096;
-  --accent-color: #805ad5;
-  --border-color: transparent;
-  --shadow-inset: inset 5px 5px 10px #d1d1d1, inset -5px -5px 10px #ffffff;
-  --shadow-outset: 5px 5px 10px #d1d1d1, -5px -5px 10px #ffffff;
+[data-theme='neumorphic'] {
+	--bg-primary: #e6e6e6;
+	--bg-secondary: #f0f0f0;
+	--bg-tertiary: #e0e0e0;
+	--text-primary: #2d3748;
+	--text-secondary: #4a5568;
+	--text-muted: #718096;
+	--accent-color: #805ad5;
+	--border-color: transparent;
+	--shadow-inset: inset 5px 5px 10px #d1d1d1, inset -5px -5px 10px #ffffff;
+	--shadow-outset: 5px 5px 10px #d1d1d1, -5px -5px 10px #ffffff;
 }
 
-[data-theme="neumorphic"] body {
-  background-color: var(--bg-primary);
-  color: var(--text-primary);
+[data-theme='neumorphic'] body {
+	background-color: var(--bg-primary);
+	color: var(--text-primary);
 }
 
-[data-theme="nier"] {
-  --bg-primary: #e8dcc6;
-  --bg-secondary: #d4c4a8;
-  --bg-tertiary: #c7b299;
-  --text-primary: #654321;
-  --text-secondary: #8b4513;
-  --text-muted: #a0522d;
-  --accent-color: #2d2d2d;
-  --border-color: #2d2d2d;
-  --nier-dark: #2d2d2d;
-  --nier-light: #f5f0e8;
-  --nier-selection: #4a4a4a;
+[data-theme='nier'] {
+	--bg-primary: #e8dcc6;
+	--bg-secondary: #d4c4a8;
+	--bg-tertiary: #c7b299;
+	--text-primary: #654321;
+	--text-secondary: #8b4513;
+	--text-muted: #a0522d;
+	--accent-color: #2d2d2d;
+	--border-color: #2d2d2d;
+	--nier-dark: #2d2d2d;
+	--nier-light: #f5f0e8;
+	--nier-selection: #4a4a4a;
 }
 
-[data-theme="nier"] body {
-  background-color: var(--bg-primary);
-  color: var(--text-primary);
-  font-family: 'Courier New', monospace;
-  font-weight: 300;
+[data-theme='nier'] body {
+	background-color: var(--bg-primary);
+	color: var(--text-primary);
+	font-family: 'Courier New', monospace;
+	font-weight: 300;
 }
 
-[data-theme="modern"] .modern-card {
-  background-color: var(--bg-primary);
-  border: 1px solid var(--border-color);
-  border-radius: 0.5rem;
-  box-shadow: var(--shadow);
+[data-theme='modern'] .modern-card {
+	background-color: var(--bg-primary);
+	border: 1px solid var(--border-color);
+	border-radius: 0.5rem;
+	box-shadow: var(--shadow);
 }
 
-[data-theme="modern"] .modern-card-sm {
-  background-color: var(--bg-primary);
-  border: 1px solid var(--border-color);
-  border-radius: 0.375rem;
-  box-shadow: var(--shadow);
+[data-theme='modern'] .modern-card-sm {
+	background-color: var(--bg-primary);
+	border: 1px solid var(--border-color);
+	border-radius: 0.375rem;
+	box-shadow: var(--shadow);
 }
 
-[data-theme="neumorphic"] .neumorph-card {
-  background-color: var(--bg-primary);
-  border-radius: 20px;
-  box-shadow: var(--shadow-outset);
+[data-theme='neumorphic'] .neumorph-card {
+	background-color: var(--bg-primary);
+	border-radius: 20px;
+	box-shadow: var(--shadow-outset);
 }
 
-[data-theme="neumorphic"] header.neumorph-card {
-  border-radius: 0 0 20px 20px;
+[data-theme='neumorphic'] header.neumorph-card {
+	border-radius: 0 0 20px 20px;
 }
 
-[data-theme="neumorphic"] .neumorph-inset {
-  box-shadow: var(--shadow-inset);
+[data-theme='neumorphic'] .neumorph-inset {
+	box-shadow: var(--shadow-inset);
 }
 
-[data-theme="nier"] .nier-card {
-  background-color: var(--bg-primary);
-  border: 2px solid var(--border-color);
-  border-radius: 0;
-  box-shadow: none;
-  position: relative;
+[data-theme='nier'] .nier-card {
+	background-color: var(--bg-primary);
+	border: 2px solid var(--border-color);
+	border-radius: 0;
+	box-shadow: none;
+	position: relative;
 }
 
-
-[data-theme="nier"] .nier-card-header {
-  background-color: var(--nier-dark);
-  color: var(--nier-light);
-  margin: -1.5rem -1.5rem 1rem -1.5rem;
-  padding: 0.75rem 1.5rem;
-  font-weight: bold;
-  border-bottom: 2px solid var(--border-color);
+[data-theme='nier'] .nier-card-header {
+	background-color: var(--nier-dark);
+	color: var(--nier-light);
+	margin: -1.5rem -1.5rem 1rem -1.5rem;
+	padding: 0.75rem 1.5rem;
+	font-weight: bold;
+	border-bottom: 2px solid var(--border-color);
 }
 
-[data-theme="nier"] .nier-button {
-  background-color: var(--nier-dark);
-  border: 2px solid var(--border-color);
-  border-radius: 0;
-  color: var(--nier-light);
-  transition: all 0.1s ease;
+[data-theme='nier'] .nier-button {
+	background-color: var(--nier-dark);
+	border: 2px solid var(--border-color);
+	border-radius: 0;
+	color: var(--nier-light);
+	transition: all 0.1s ease;
 }
 
-[data-theme="nier"] .nier-button:hover {
-  background-color: var(--nier-selection);
+[data-theme='nier'] .nier-button:hover {
+	background-color: var(--nier-selection);
 }
 
-[data-theme="nier"] .nier-selected {
-  background-color: var(--nier-selection);
-  color: var(--nier-light);
+[data-theme='nier'] .nier-selected {
+	background-color: var(--nier-selection);
+	color: var(--nier-light);
 }
 
-[data-theme="gnome"] .gnome-card {
-  background-color: var(--bg-secondary);
-  border: 1px solid var(--border-color);
-  border-radius: 0;
-  box-shadow: none;
+[data-theme='gnome'] .gnome-card {
+	background-color: var(--bg-secondary);
+	border: 1px solid var(--border-color);
+	border-radius: 0;
+	box-shadow: none;
 }
 
-[data-theme="gnome"] .gnome-button {
-  background-color: var(--bg-tertiary);
-  border: 1px solid var(--border-color);
-  border-radius: 0;
-  color: var(--text-primary);
-  transition: all 0.1s ease;
+[data-theme='gnome'] .gnome-button {
+	background-color: var(--bg-tertiary);
+	border: 1px solid var(--border-color);
+	border-radius: 0;
+	color: var(--text-primary);
+	transition: all 0.1s ease;
 }
 
-[data-theme="gnome"] .gnome-button:hover {
-  background-color: var(--accent-color);
-  color: var(--bg-primary);
+[data-theme='gnome'] .gnome-button:hover {
+	background-color: var(--accent-color);
+	color: var(--bg-primary);
 }
 
 .theme-button-terminal {
-  font-family: 'Courier New', monospace;
-  font-size: 0.875rem;
-  line-height: 1.25rem;
+	font-family: 'Courier New', monospace;
+	font-size: 0.875rem;
+	line-height: 1.25rem;
 }
 
 .theme-button-gnome {
-  font-family: 'Ubuntu Mono', 'DejaVu Sans Mono', 'Liberation Mono', monospace;
-  font-size: 0.875rem;
-  line-height: 1.25rem;
+	font-family:
+		'Ubuntu Mono', 'DejaVu Sans Mono', 'Liberation Mono', monospace;
+	font-size: 0.875rem;
+	line-height: 1.25rem;
 }
 
 .theme-button-modern {
-  font-family: ui-sans-serif, system-ui, sans-serif;
-  font-size: 0.875rem;
-  line-height: 1.25rem;
+	font-family: ui-sans-serif, system-ui, sans-serif;
+	font-size: 0.875rem;
+	line-height: 1.25rem;
 }
 
 .theme-button-neumorphic {
-  font-family: ui-sans-serif, system-ui, sans-serif;
-  font-size: 0.875rem;
-  line-height: 1.25rem;
+	font-family: ui-sans-serif, system-ui, sans-serif;
+	font-size: 0.875rem;
+	line-height: 1.25rem;
 }
 
 .theme-button-nier {
-  font-family: 'Courier New', monospace;
-  font-size: 0.875rem;
-  line-height: 1.25rem;
+	font-family: 'Courier New', monospace;
+	font-size: 0.875rem;
+	line-height: 1.25rem;
 }
 
 .prose {
-  color: var(--text-primary);
+	color: var(--text-primary);
 }
 
 .prose h1,
@@ -265,17 +268,17 @@
 .prose h4,
 .prose h5,
 .prose h6 {
-  color: var(--text-primary);
+	color: var(--text-primary);
 }
 
 .prose p {
-  color: var(--text-secondary);
+	color: var(--text-secondary);
 }
 
 .prose a {
-  color: var(--accent-color);
+	color: var(--accent-color);
 }
 
 .accent-color {
-  color: var(--accent-color);
+	color: var(--accent-color);
 }

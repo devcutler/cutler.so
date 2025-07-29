@@ -1,9 +1,9 @@
 {
-  "slug": "/",
-  "title": "Home",
-  "description": "Welcome to my personal site",
-  "tags": [],
-  "content": "\n# Welcome\n\nThis is the home page.",
-  "path": "index.md",
-  "length": 34
+	"slug": "/",
+	"title": "Home",
+	"description": "Welcome to my personal site",
+	"tags": [],
+	"content": "\n# Welcome\n\nThis is the home page.",
+	"path": "index.md",
+	"length": 34
 }

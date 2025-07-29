@@ -1,45 +1,42 @@
 {
-  "pages": [
-    {
-      "slug": "/about/experience",
-      "title": "Experience",
-      "description": "My professional experience",
-      "tags": [],
-      "length": 34
-    },
-    {
-      "slug": "/about",
-      "title": "About",
-      "description": "Learn more about me",
-      "tags": [],
-      "length": 68
-    },
-    {
-      "slug": "/blog",
-      "title": "Blog",
-      "description": "My thoughts and writings",
-      "tags": [],
-      "length": 36
-    },
-    {
-      "slug": "/",
-      "title": "Home",
-      "description": "Welcome to my personal site",
-      "tags": [],
-      "length": 34
-    }
-  ],
-  "blog": [
-    {
-      "slug": "/blog/test-page",
-      "title": "Markdown Test Page",
-      "description": "A file demonstrating the capabilities of Github Flavored Markdown",
-      "date": "1970-01-01",
-      "tags": [
-        "test",
-        "content"
-      ],
-      "length": 4340
-    }
-  ]
+	"pages": [
+		{
+			"slug": "/about/experience",
+			"title": "Experience",
+			"description": "My professional experience",
+			"tags": [],
+			"length": 34
+		},
+		{
+			"slug": "/about",
+			"title": "About",
+			"description": "Learn more about me",
+			"tags": [],
+			"length": 68
+		},
+		{
+			"slug": "/blog",
+			"title": "Blog",
+			"description": "My thoughts and writings",
+			"tags": [],
+			"length": 36
+		},
+		{
+			"slug": "/",
+			"title": "Home",
+			"description": "Welcome to my personal site",
+			"tags": [],
+			"length": 34
+		}
+	],
+	"blog": [
+		{
+			"slug": "/blog/test-page",
+			"title": "Markdown Test Page",
+			"description": "A file demonstrating the capabilities of Github Flavored Markdown",
+			"date": "1970-01-01",
+			"tags": ["test", "content"],
+			"length": 4340
+		}
+	]
 }

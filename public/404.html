@@ -1,31 +1,43 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>cutler.so</title>
-  <script>
-    // GitHub Pages SPA redirect hack
-    // This script takes the current URL and redirects to the root with a query parameter
-    // The root page will then handle the routing client-side
-    (function(l) {
-      if (l.search[1] === '/' ) {
-        var decoded = sessionStorage.redirect;
-        delete sessionStorage.redirect;
-        if (decoded) {
-          l.replace(l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') + decoded);
-          return;
-        }
-      }
-      var path = l.pathname.slice(1);
-      l.replace(
-        l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
-        '/?/' + path + (l.search ? '&' + l.search.slice(1) : '') + l.hash
-      );
-    }(window.location))
-  </script>
-</head>
-<body>
-  <div>Redirecting...</div>
-</body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>cutler.so</title>
+		<script>
+			// GitHub Pages SPA redirect hack
+			// This script takes the current URL and redirects to the root with a query parameter
+			// The root page will then handle the routing client-side
+			(function (l) {
+				if (l.search[1] === '/') {
+					var decoded = sessionStorage.redirect;
+					delete sessionStorage.redirect;
+					if (decoded) {
+						l.replace(
+							l.protocol +
+								'//' +
+								l.hostname +
+								(l.port ? ':' + l.port : '') +
+								decoded
+						);
+						return;
+					}
+				}
+				var path = l.pathname.slice(1);
+				l.replace(
+					l.protocol +
+						'//' +
+						l.hostname +
+						(l.port ? ':' + l.port : '') +
+						'/?/' +
+						path +
+						(l.search ? '&' + l.search.slice(1) : '') +
+						l.hash
+				);
+			})(window.location);
+		</script>
+	</head>
+	<body>
+		<div>Redirecting...</div>
+	</body>
 </html>

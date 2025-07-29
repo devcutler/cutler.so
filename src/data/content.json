@@ -1,55 +1,52 @@
 {
-  "pages": [
-    {
-      "slug": "/about/experience",
-      "title": "Experience",
-      "description": "My professional experience",
-      "tags": [],
-      "content": "\n# Experience\n\nMy work experience.",
-      "path": "about/experience.md",
-      "length": 34
-    },
-    {
-      "slug": "/about",
-      "title": "About",
-      "description": "Learn more about me",
-      "tags": [],
-      "content": "\n# About Me\n\nThis is the about page.\n\n[Experience](about/experience)",
-      "path": "about/index.md",
-      "length": 68
-    },
-    {
-      "slug": "/blog",
-      "title": "Blog",
-      "description": "My thoughts and writings",
-      "tags": [],
-      "content": "\n# Blog\n\nThis is the blog main page.",
-      "path": "blog/index.md",
-      "length": 36
-    },
-    {
-      "slug": "/",
-      "title": "Home",
-      "description": "Welcome to my personal site",
-      "tags": [],
-      "content": "\n# Welcome\n\nThis is the home page.",
-      "path": "index.md",
-      "length": 34
-    }
-  ],
-  "blog": [
-    {
-      "slug": "/blog/test-page",
-      "title": "Markdown Test Page",
-      "description": "A file demonstrating the capabilities of Github Flavored Markdown",
-      "date": "1970-01-01",
-      "tags": [
-        "test",
-        "content"
-      ],
-      "content": "\n### Info\nShamelessly stolen from giellalt: [giellalt.github.io](https://giellalt.github.io)\n\n# GFM Test Document\n\nThis document contains examples of all GitHub Flavored Markdown (GFM), both code\nsnippets and as rendered, and additional data structures (code blocks) rendered\nin various ways.\n\nIt serves both as a test on what is supported in the various places, and as a\nreference for how to write GFM.\n\n[This is how it renders](https://github.com/giellalt/giellalt.github.io/blob/main/infra/MarkdownTestReference.md)\nby GitHub's own processor. There are differences compared to GitHub pages.\n\n## Headers\n\nStart line with 1-6 `#` characters, then a space, then the header text:\n\n```md\n## foo 1\n\n### foo 2\n\n#### foo 3\n\n##### foo 4\n\n###### foo 5\n\n####### foo 6\n```\n\nThe above will be rendered as:\n\n## foo 1\n\n### foo 2\n\n#### foo 3\n\n##### foo 4\n\n###### foo 5\n\n####### foo 6\n\nIt is also ok with `#` symbols after the header text, like this:\n\n```md\n## foo 1a\n\n### foo 2a\n\n#### foo 3a\n\n##### foo 4a\n\n###### foo 5a\n\n####### foo 6a\n```\n\nThese will look like the following:\n\n## foo 1a\n\n### foo 2a\n\n#### foo 3a\n\n##### foo 4a\n\n###### foo 5a\n\n####### foo 6a\n\nOne can also specify the two first header levels using underlines.\n\n```md\n## Header text\n```\n\nwill show up as:\n\n## Header text\n\nand:\n\n```md\n### Another header text\n```\n\ncomes out as:\n\n### Another header text\n\nIn these cases the header text can span multiple lines, as in:\n\n```md\nHeader with a\nlot of text\n=============\n```\n\nHeader with _a\nlot_ of text\n=============\n\n## Horisontal lines\n\nOne can use one of `*`, `-` or `_`. It must be at least three of them, and there\ncan be spaces between. There can be nothing else that whitespace and one of the\nmentioned characters.\n\n```md\n---\n```\n\nrenders like:\n\n---\n\nand:\n\n```md\n---\n```\n\nalso renders like:\n\n---\n\nand even (at most three initial spaces)\n\n```md\n---\n```\n\nrenders like:\n\n---\n\nEnough with horisontal lines.\n\n## Emoji\n\n[GFM emoji](https://github.com/ikatyang/emoji-cheat-sheet/blob/master/README.md) rendering has been enabled! :+1:\n\n## HTML elements\n\nMost elements are passed through and will render as such. The following HTML\nelements **will be encoded using &lt;**, and thus be inactivated in the final html code:\n\n- `<title>    `\n- `<textarea> `\n- `<style>    `\n- `<xmp>      `\n- `<iframe>   `\n- `<noembed>  `\n- `<noframes> `\n- `<script>   `\n- `<plaintext>`\n\nAll other html and xml tag lookalikes will be passed through, and either rendered\nas usual, or be available for targeted CSS styling.\n\n### Useful HTML elements\n\n#### The `<ruby>` element\n\n```xml\n<ruby>tekst<rt>ja</rt></ruby>\n```\n\nwill render as:\n\n<ruby>tekst<rt>ja</rt></ruby>\n\nThis can be used to show pronunciation:\n\n```xml\n<ruby><strong>cromulent</strong> <rp>(</rp><rt>crôm-yü-lənt</rt><rp>)</rp></ruby>\n```\n\n<ruby><strong>cromulent</strong> <rp>(</rp><rt>crôm-yü-lənt</rt><rp>)</rp></ruby>\n\nTraditional use is for east asian scripts:\n\n<ruby>한자<rp>(</rp><rt>漢字</rt><rp>)</rp></ruby>\n\nRuby elements can even be nested:\n\n<ruby><ruby>世<rp>（</rp><rt>ㄕ ˋ</rt><rp>）</rp>上<rp>（</rp><rt>ㄕㄤ ˋ</rt><rp>）</rp>無<rp>（</rp><rt>ㄨ ˊ</rt><rp>）</rp>難<rp>（</rp><rt>ㄋㄢ ˊ</rt><rp>）</rp>事<rp>（</rp><rt>ㄕ ˋ</rt><rp>）</rp>只<rp>（</rp><rt>ㄓ ˇ</rt><rp>）</rp>怕<rp>（</rp><rt>ㄆㄚ ˋ</rt><rp>）</rp>有<rp>（</rp><rt>ㄧㄡ ˇ</rt><rp>）</rp>心<rp>（</rp><rt>ㄒㄧㄣ</rt><rp>）</rp>人<rp>（</rp><rt>ㄖㄣ ˊ</rt><rp>）</rp></ruby><rp> （</rp><rt>Anything can be done with enough perseverance</rt><rp>）</rp></ruby>\n\nIn our context it can be used for simple glossing/text annotation:\n\n<ruby>1800-lågon<rt>1800+Num+Cmp/Hyph+Cmp#låhko+N+Sg+Ine</rt></ruby>\n<ruby>hieredimbargon<rt>hieredit+V+TV+Der/NomAct+N+Cmp/SgNom+Cmp#barggo+N+Sg+Ine</rt></ruby>\n\n```xml\n<kbd>ᛌᛁᚢᚱ</kbd>\n```\n\n**<kbd>ᛌᛁᚢᚱ</kbd>**\n\n<kbd><kbd>ᛌᛁᚢᚱ</kbd></kbd>\n\n## Simple graphs\n\n```mermaid\npie showData\n    title Formal languages used in GiellaLT\n    \"LexC\" : 3129\n    \"Xfst regex\" : 2374\n    \"Xfst script\" : 856\n    \"TwolC\" : 125\n    \"YAML\" : 4451\n```\n\nBased on counts of all files of the various types in all repositories in the\nGiellaLT infra.\n\nAnother Mermaid test, this one includes configuration data:\n\n```mermaid\n%%{init: {\"pie\": {\"textPosition\": 0.5}, 'theme':'forest', \"themeVariables\": {\"pieOuterStrokeWidth\": \"5px\"}} }%%\npie showData\n    title Key elements in Product X\n    \"Calcium\" : 42.96\n    \"Potassium\" : 50.05\n    \"Magnesium\" : 10.01\n    \"Iron\" :  5\n```",
-      "path": "blog/test-page.md",
-      "length": 4340
-    }
-  ]
+	"pages": [
+		{
+			"slug": "/about/experience",
+			"title": "Experience",
+			"description": "My professional experience",
+			"tags": [],
+			"content": "\n# Experience\n\nMy work experience.",
+			"path": "about/experience.md",
+			"length": 34
+		},
+		{
+			"slug": "/about",
+			"title": "About",
+			"description": "Learn more about me",
+			"tags": [],
+			"content": "\n# About Me\n\nThis is the about page.\n\n[Experience](about/experience)",
+			"path": "about/index.md",
+			"length": 68
+		},
+		{
+			"slug": "/blog",
+			"title": "Blog",
+			"description": "My thoughts and writings",
+			"tags": [],
+			"content": "\n# Blog\n\nThis is the blog main page.",
+			"path": "blog/index.md",
+			"length": 36
+		},
+		{
+			"slug": "/",
+			"title": "Home",
+			"description": "Welcome to my personal site",
+			"tags": [],
+			"content": "\n# Welcome\n\nThis is the home page.",
+			"path": "index.md",
+			"length": 34
+		}
+	],
+	"blog": [
+		{
+			"slug": "/blog/test-page",
+			"title": "Markdown Test Page",
+			"description": "A file demonstrating the capabilities of Github Flavored Markdown",
+			"date": "1970-01-01",
+			"tags": ["test", "content"],
+			"content": "\n### Info\nShamelessly stolen from giellalt: [giellalt.github.io](https://giellalt.github.io)\n\n# GFM Test Document\n\nThis document contains examples of all GitHub Flavored Markdown (GFM), both code\nsnippets and as rendered, and additional data structures (code blocks) rendered\nin various ways.\n\nIt serves both as a test on what is supported in the various places, and as a\nreference for how to write GFM.\n\n[This is how it renders](https://github.com/giellalt/giellalt.github.io/blob/main/infra/MarkdownTestReference.md)\nby GitHub's own processor. There are differences compared to GitHub pages.\n\n## Headers\n\nStart line with 1-6 `#` characters, then a space, then the header text:\n\n```md\n## foo 1\n\n### foo 2\n\n#### foo 3\n\n##### foo 4\n\n###### foo 5\n\n####### foo 6\n```\n\nThe above will be rendered as:\n\n## foo 1\n\n### foo 2\n\n#### foo 3\n\n##### foo 4\n\n###### foo 5\n\n####### foo 6\n\nIt is also ok with `#` symbols after the header text, like this:\n\n```md\n## foo 1a\n\n### foo 2a\n\n#### foo 3a\n\n##### foo 4a\n\n###### foo 5a\n\n####### foo 6a\n```\n\nThese will look like the following:\n\n## foo 1a\n\n### foo 2a\n\n#### foo 3a\n\n##### foo 4a\n\n###### foo 5a\n\n####### foo 6a\n\nOne can also specify the two first header levels using underlines.\n\n```md\n## Header text\n```\n\nwill show up as:\n\n## Header text\n\nand:\n\n```md\n### Another header text\n```\n\ncomes out as:\n\n### Another header text\n\nIn these cases the header text can span multiple lines, as in:\n\n```md\nHeader with a\nlot of text\n=============\n```\n\nHeader with _a\nlot_ of text\n=============\n\n## Horisontal lines\n\nOne can use one of `*`, `-` or `_`. It must be at least three of them, and there\ncan be spaces between. There can be nothing else that whitespace and one of the\nmentioned characters.\n\n```md\n---\n```\n\nrenders like:\n\n---\n\nand:\n\n```md\n---\n```\n\nalso renders like:\n\n---\n\nand even (at most three initial spaces)\n\n```md\n---\n```\n\nrenders like:\n\n---\n\nEnough with horisontal lines.\n\n## Emoji\n\n[GFM emoji](https://github.com/ikatyang/emoji-cheat-sheet/blob/master/README.md) rendering has been enabled! :+1:\n\n## HTML elements\n\nMost elements are passed through and will render as such. The following HTML\nelements **will be encoded using &lt;**, and thus be inactivated in the final html code:\n\n- `<title>    `\n- `<textarea> `\n- `<style>    `\n- `<xmp>      `\n- `<iframe>   `\n- `<noembed>  `\n- `<noframes> `\n- `<script>   `\n- `<plaintext>`\n\nAll other html and xml tag lookalikes will be passed through, and either rendered\nas usual, or be available for targeted CSS styling.\n\n### Useful HTML elements\n\n#### The `<ruby>` element\n\n```xml\n<ruby>tekst<rt>ja</rt></ruby>\n```\n\nwill render as:\n\n<ruby>tekst<rt>ja</rt></ruby>\n\nThis can be used to show pronunciation:\n\n```xml\n<ruby><strong>cromulent</strong> <rp>(</rp><rt>crôm-yü-lənt</rt><rp>)</rp></ruby>\n```\n\n<ruby><strong>cromulent</strong> <rp>(</rp><rt>crôm-yü-lənt</rt><rp>)</rp></ruby>\n\nTraditional use is for east asian scripts:\n\n<ruby>한자<rp>(</rp><rt>漢字</rt><rp>)</rp></ruby>\n\nRuby elements can even be nested:\n\n<ruby><ruby>世<rp>（</rp><rt>ㄕ ˋ</rt><rp>）</rp>上<rp>（</rp><rt>ㄕㄤ ˋ</rt><rp>）</rp>無<rp>（</rp><rt>ㄨ ˊ</rt><rp>）</rp>難<rp>（</rp><rt>ㄋㄢ ˊ</rt><rp>）</rp>事<rp>（</rp><rt>ㄕ ˋ</rt><rp>）</rp>只<rp>（</rp><rt>ㄓ ˇ</rt><rp>）</rp>怕<rp>（</rp><rt>ㄆㄚ ˋ</rt><rp>）</rp>有<rp>（</rp><rt>ㄧㄡ ˇ</rt><rp>）</rp>心<rp>（</rp><rt>ㄒㄧㄣ</rt><rp>）</rp>人<rp>（</rp><rt>ㄖㄣ ˊ</rt><rp>）</rp></ruby><rp> （</rp><rt>Anything can be done with enough perseverance</rt><rp>）</rp></ruby>\n\nIn our context it can be used for simple glossing/text annotation:\n\n<ruby>1800-lågon<rt>1800+Num+Cmp/Hyph+Cmp#låhko+N+Sg+Ine</rt></ruby>\n<ruby>hieredimbargon<rt>hieredit+V+TV+Der/NomAct+N+Cmp/SgNom+Cmp#barggo+N+Sg+Ine</rt></ruby>\n\n```xml\n<kbd>ᛌᛁᚢᚱ</kbd>\n```\n\n**<kbd>ᛌᛁᚢᚱ</kbd>**\n\n<kbd><kbd>ᛌᛁᚢᚱ</kbd></kbd>\n\n## Simple graphs\n\n```mermaid\npie showData\n    title Formal languages used in GiellaLT\n    \"LexC\" : 3129\n    \"Xfst regex\" : 2374\n    \"Xfst script\" : 856\n    \"TwolC\" : 125\n    \"YAML\" : 4451\n```\n\nBased on counts of all files of the various types in all repositories in the\nGiellaLT infra.\n\nAnother Mermaid test, this one includes configuration data:\n\n```mermaid\n%%{init: {\"pie\": {\"textPosition\": 0.5}, 'theme':'forest', \"themeVariables\": {\"pieOuterStrokeWidth\": \"5px\"}} }%%\npie showData\n    title Key elements in Product X\n    \"Calcium\" : 42.96\n    \"Potassium\" : 50.05\n    \"Magnesium\" : 10.01\n    \"Iron\" :  5\n```",
+			"path": "blog/test-page.md",
+			"length": 4340
+		}
+	]
 }

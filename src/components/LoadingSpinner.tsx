@@ -1,17 +1,18 @@
-
 interface LoadingSpinnerProps {
-  message?: string;
+	message?: string;
 }
 
-export function LoadingSpinner({ message = 'Loading...' }: LoadingSpinnerProps) {
+export function LoadingSpinner({
+	message = 'Loading...',
+}: LoadingSpinnerProps) {
 	return (
 		<div className="min-h-screen flex items-center justify-center">
 			<div className="text-center">
-				<div 
+				<div
 					className="animate-spin rounded-full h-12 w-12 border-b-2 mx-auto mb-4"
 					style={{ borderColor: 'var(--accent-color)' }}
 				/>
-				<p 
+				<p
 					className="font-mono text-sm"
 					style={{ color: 'var(--text-secondary)' }}
 				>

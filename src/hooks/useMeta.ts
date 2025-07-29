@@ -1,12 +1,12 @@
 import { useEffect } from 'react';
 
 interface MetaProps {
-  title?: string;
-  description?: string;
-  ogTitle?: string;
-  ogDescription?: string;
-  ogImage?: string;
-  ogUrl?: string;
+	title?: string;
+	description?: string;
+	ogTitle?: string;
+	ogDescription?: string;
+	ogImage?: string;
+	ogUrl?: string;
 }
 
 export function useMeta({
@@ -15,7 +15,7 @@ export function useMeta({
 	ogTitle,
 	ogDescription,
 	ogImage,
-	ogUrl
+	ogUrl,
 }: MetaProps) {
 	useEffect(() => {
 		if (title) {
@@ -23,8 +23,16 @@ export function useMeta({
 		}
 
 		const updateMetaTag = (property: string, content: string) => {
-			if (!property || !content || typeof property !== 'string' || typeof content !== 'string') {
-				console.warn('Invalid meta tag parameters:', { property, content });
+			if (
+				!property ||
+				!content ||
+				typeof property !== 'string' ||
+				typeof content !== 'string'
+			) {
+				console.warn('Invalid meta tag parameters:', {
+					property,
+					content,
+				});
 				return;
 			}
 
@@ -32,18 +40,26 @@ export function useMeta({
 			const sanitizedContent = content.replace(/[<>'"]/g, '').trim();
 
 			if (!sanitizedProperty || !sanitizedContent) {
-				console.warn('Meta tag parameters became empty after sanitization');
+				console.warn(
+					'Meta tag parameters became empty after sanitization'
+				);
 				return;
 			}
 
 			const validPropertyPattern = /^[a-z:_-]+$/i;
 			if (!validPropertyPattern.test(sanitizedProperty)) {
-				console.warn('Invalid meta property format:', sanitizedProperty);
+				console.warn(
+					'Invalid meta property format:',
+					sanitizedProperty
+				);
 				return;
 			}
 
-			let meta = document.querySelector(`meta[property="${sanitizedProperty}"]`) ||
-        document.querySelector(`meta[name="${sanitizedProperty}"]`);
+			let meta =
+				document.querySelector(
+					`meta[property="${sanitizedProperty}"]`
+				) ||
+				document.querySelector(`meta[name="${sanitizedProperty}"]`);
 
 			if (!meta) {
 				meta = document.createElement('meta');
@@ -76,6 +92,5 @@ export function useMeta({
 		}
 
 		updateMetaTag('og:type', 'website');
-
 	}, [title, description, ogTitle, ogDescription, ogImage, ogUrl]);
 }

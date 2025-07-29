@@ -1,9 +1,9 @@
 {
-  "slug": "/about",
-  "title": "About",
-  "description": "Learn more about me",
-  "tags": [],
-  "content": "\n# About Me\n\nThis is the about page.\n\n[Experience](about/experience)",
-  "path": "about/index.md",
-  "length": 68
+	"slug": "/about",
+	"title": "About",
+	"description": "Learn more about me",
+	"tags": [],
+	"content": "\n# About Me\n\nThis is the about page.\n\n[Experience](about/experience)",
+	"path": "about/index.md",
+	"length": 68
 }
