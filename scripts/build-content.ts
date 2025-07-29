@@ -204,8 +204,40 @@ function main() {
     console.log(`Generated RSS feed with ${blog.length} posts`);
   }
 
+  // Copy content files to public/ so Vite includes them in the build
+  const publicContentDir = path.join(publicDir, 'content');
+  
+  // Ensure public/content directory exists
+  fs.mkdirSync(publicContentDir, { recursive: true });
+  
+  // Copy content files to public/
+  [...pages, ...blog].forEach(item => {
+    const filename = item.slug.replace(/\//g, '_').replace(/^_/, '') + '.json';
+    const srcPath = path.join(distContentDir, filename);
+    const destPath = path.join(publicContentDir, filename);
+    if (fs.existsSync(srcPath)) {
+      fs.copyFileSync(srcPath, destPath);
+    }
+  });
+  
+  // Copy index files to public/
+  if (fs.existsSync(path.join(distDir, 'content-index.json'))) {
+    fs.copyFileSync(
+      path.join(distDir, 'content-index.json'),
+      path.join(publicDir, 'content-index.json')
+    );
+  }
+  
+  if (fs.existsSync(path.join(distDir, 'rss.xml'))) {
+    fs.copyFileSync(
+      path.join(distDir, 'rss.xml'),
+      path.join(publicDir, 'rss.xml')
+    );
+  }
+
   console.log(`Processed ${pages.length} pages and ${blog.length} blog posts`);
   console.log(`Created ${pages.length + blog.length} individual content files`);
+  console.log(`Copied content files to public/ for Vite build`);
 }
 
 if (import.meta.url === `file://${process.argv[1]}`) {

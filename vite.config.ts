@@ -7,7 +7,7 @@ export default defineConfig({
   // eslint-disable-next-line
   plugins: [react(), tailwindcss() as any],
   base: '/',
-  publicDir: 'dist',
+  publicDir: 'public',
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
