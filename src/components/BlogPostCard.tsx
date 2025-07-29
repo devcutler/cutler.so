@@ -64,31 +64,31 @@ export function BlogPostCard({
 
 function getTagClasses(theme: ThemeType): string {
 	switch (theme) {
-		case 'neumorphic':
-			return 'neumorph-inset';
-		case 'nier':
-		case 'gnome':
-		case 'terminal':
-			return 'px-2 py-1 rounded text-xs border border-current';
-		default:
-			return 'px-2 py-1 rounded text-xs';
+	case 'neumorphic':
+		return 'neumorph-inset';
+	case 'nier':
+	case 'gnome':
+	case 'terminal':
+		return 'px-2 py-1 rounded text-xs border border-current';
+	default:
+		return 'px-2 py-1 rounded text-xs';
 	}
 }
 
 function getTagStyle(theme: ThemeType): React.CSSProperties {
 	switch (theme) {
-		case 'nier':
-		case 'gnome':
-		case 'terminal':
-			return {
-				backgroundColor: 'var(--bg-tertiary)',
-				color: 'var(--accent-color)',
-				borderColor: 'var(--accent-color)',
-			};
-		default:
-			return {
-				backgroundColor: 'var(--bg-tertiary)',
-				color: 'var(--text-muted)',
-			};
+	case 'nier':
+	case 'gnome':
+	case 'terminal':
+		return {
+			backgroundColor: 'var(--bg-tertiary)',
+			color: 'var(--accent-color)',
+			borderColor: 'var(--accent-color)',
+		};
+	default:
+		return {
+			backgroundColor: 'var(--bg-tertiary)',
+			color: 'var(--text-muted)',
+		};
 	}
 }

@@ -38,25 +38,25 @@ export function ContentPage() {
 
 	const getContainerClasses = () => {
 		switch (theme) {
-			case 'terminal':
-				return 'bg-transparent border-none shadow-none p-0';
-			case 'neumorphic':
-				return 'neumorph-card p-8';
-			case 'nier':
-				return 'nier-card p-8';
-			case 'gnome':
-				return 'gnome-card p-8';
-			default:
-				return 'modern-card p-8';
+		case 'terminal':
+			return 'bg-transparent border-none shadow-none p-0';
+		case 'neumorphic':
+			return 'neumorph-card p-8';
+		case 'nier':
+			return 'nier-card p-8';
+		case 'gnome':
+			return 'gnome-card p-8';
+		default:
+			return 'modern-card p-8';
 		}
 	};
 
 	const getContentClasses = () => {
 		switch (theme) {
-			case 'terminal':
-				return 'leading-relaxed';
-			default:
-				return '';
+		case 'terminal':
+			return 'leading-relaxed';
+		default:
+			return '';
 		}
 	};
 
@@ -75,30 +75,30 @@ export function ContentPage() {
 
 	const getTextClasses = () => {
 		switch (theme) {
-			case 'terminal':
-				return {
-					error: 'font-mono',
-					muted: 'font-mono',
-					link: 'hover:opacity-80 transition-colors font-mono',
-					date: 'font-mono text-sm',
-					tag: 'text-sm font-mono mr-4',
-				};
-			case 'neumorphic':
-				return {
-					error: '',
-					muted: '',
-					link: 'hover:opacity-80 transition-colors',
-					date: '',
-					tag: 'px-3 py-1 neumorph-inset rounded-full text-sm',
-				};
-			default:
-				return {
-					error: '',
-					muted: '',
-					link: 'hover:opacity-80 transition-colors',
-					date: '',
-					tag: 'px-3 py-1 rounded-full text-sm',
-				};
+		case 'terminal':
+			return {
+				error: 'font-mono',
+				muted: 'font-mono',
+				link: 'hover:opacity-80 transition-colors font-mono',
+				date: 'font-mono text-sm',
+				tag: 'text-sm font-mono mr-4',
+			};
+		case 'neumorphic':
+			return {
+				error: '',
+				muted: '',
+				link: 'hover:opacity-80 transition-colors',
+				date: '',
+				tag: 'px-3 py-1 neumorph-inset rounded-full text-sm',
+			};
+		default:
+			return {
+				error: '',
+				muted: '',
+				link: 'hover:opacity-80 transition-colors',
+				date: '',
+				tag: 'px-3 py-1 rounded-full text-sm',
+			};
 		}
 	};
 

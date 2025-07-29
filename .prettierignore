@@ -1,7 +1,0 @@
-dist/
-node_modules/
-*.md
-.prettierrc
-.prettierignore
-pnpm-lock.yaml
-CNAME

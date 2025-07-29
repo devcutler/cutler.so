@@ -8,8 +8,7 @@
 		"build": "pnpm build:content && tsc -b && vite build",
 		"build:content": "tsx scripts/build-content.ts",
 		"lint": "eslint .",
-		"format": "prettier --write .",
-		"format:check": "prettier --check .",
+		"format": "eslint --fix .",
 		"typecheck": "tsc --noEmit",
 		"preview": "vite preview"
 	},
@@ -42,7 +41,6 @@
 		"eslint-plugin-react-refresh": "^0.4.20",
 		"globals": "^16.3.0",
 		"postcss": "^8.5.6",
-		"prettier": "^3.6.2",
 		"tailwindcss": "^4.1.11",
 		"tsx": "^4.20.3",
 		"typescript": "~5.8.3",

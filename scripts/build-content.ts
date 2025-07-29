@@ -35,7 +35,7 @@ interface ContentIndexItem {
 
 function processMarkdownFile(
 	filePath: string,
-	relativePath: string
+	relativePath: string,
 ): ContentItem {
 	const content = fs.readFileSync(filePath, 'utf-8');
 	const { data, content: markdownContent } = matter(content);
@@ -121,7 +121,7 @@ function main() {
 			}
 		});
 		console.log(
-			`Copied ${publicFiles.length} static assets from public/ to dist/`
+			`Copied ${publicFiles.length} static assets from public/ to dist/`,
 		);
 	}
 
@@ -130,12 +130,12 @@ function main() {
 	const blog = allContent.filter(
 		item =>
 			item.path.startsWith('blog/') &&
-			!item.path.endsWith('blog/index.md')
+			!item.path.endsWith('blog/index.md'),
 	);
 	const pages = allContent.filter(
 		item =>
 			!item.path.startsWith('blog/') ||
-			item.path.endsWith('blog/index.md')
+			item.path.endsWith('blog/index.md'),
 	);
 
 	blog.sort((a, b) => {
@@ -175,7 +175,7 @@ function main() {
 
 	fs.writeFileSync(
 		path.join(srcOutputDir, 'content-index.json'),
-		indexContent
+		indexContent,
 	);
 
 	fs.writeFileSync(path.join(distDir, 'content-index.json'), indexContent);
@@ -210,7 +210,7 @@ function main() {
 
 		fs.writeFileSync(
 			path.join(distDir, 'rss.xml'),
-			feed.xml({ indent: true })
+			feed.xml({ indent: true }),
 		);
 
 		console.log(`Generated RSS feed with ${blog.length} posts`);
@@ -237,24 +237,24 @@ function main() {
 	if (fs.existsSync(path.join(distDir, 'content-index.json'))) {
 		fs.copyFileSync(
 			path.join(distDir, 'content-index.json'),
-			path.join(publicDir, 'content-index.json')
+			path.join(publicDir, 'content-index.json'),
 		);
 	}
 
 	if (fs.existsSync(path.join(distDir, 'rss.xml'))) {
 		fs.copyFileSync(
 			path.join(distDir, 'rss.xml'),
-			path.join(publicDir, 'rss.xml')
+			path.join(publicDir, 'rss.xml'),
 		);
 	}
 
 	console.log(
-		`Processed ${pages.length} pages and ${blog.length} blog posts`
+		`Processed ${pages.length} pages and ${blog.length} blog posts`,
 	);
 	console.log(
-		`Created ${pages.length + blog.length} individual content files`
+		`Created ${pages.length + blog.length} individual content files`,
 	);
-	console.log(`Copied content files to public/ for Vite build`);
+	console.log('Copied content files to public/ for Vite build');
 }
 
 if (import.meta.url === `file://${process.argv[1]}`) {

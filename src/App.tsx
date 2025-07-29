@@ -43,10 +43,6 @@ function AppContent() {
 						className="text-white px-4 py-2 rounded transition-colors"
 						style={{
 							backgroundColor: 'var(--error-color, #ef4444)',
-							':hover': {
-								backgroundColor:
-									'var(--error-color-hover, #dc2626)',
-							},
 						}}
 						onMouseEnter={e =>
 							(e.currentTarget.style.backgroundColor =
@@ -66,12 +62,12 @@ function AppContent() {
 
 	const getBackgroundClasses = () => {
 		switch (theme) {
-			case 'terminal':
-				return 'min-h-screen';
-			case 'neumorphic':
-				return 'min-h-screen';
-			default:
-				return 'min-h-screen';
+		case 'terminal':
+			return 'min-h-screen';
+		case 'neumorphic':
+			return 'min-h-screen';
+		default:
+			return 'min-h-screen';
 		}
 	};
 

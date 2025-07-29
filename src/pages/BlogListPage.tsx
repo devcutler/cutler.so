@@ -30,46 +30,46 @@ export function BlogListPage() {
 
 	const getContainerClasses = () => {
 		switch (theme) {
-			case 'terminal':
-				return 'space-y-8';
-			case 'neumorphic':
-				return 'space-y-8';
-			case 'nier':
-				return 'space-y-8';
-			case 'gnome':
-				return 'space-y-8';
-			default:
-				return 'space-y-8';
+		case 'terminal':
+			return 'space-y-8';
+		case 'neumorphic':
+			return 'space-y-8';
+		case 'nier':
+			return 'space-y-8';
+		case 'gnome':
+			return 'space-y-8';
+		default:
+			return 'space-y-8';
 		}
 	};
 
 	const getCardClasses = () => {
 		switch (theme) {
-			case 'terminal':
-				return 'bg-transparent border-none shadow-none p-0';
-			case 'neumorphic':
-				return 'neumorph-card p-8';
-			case 'nier':
-				return 'nier-card p-8';
-			case 'gnome':
-				return 'gnome-card p-8';
-			default:
-				return 'modern-card p-8';
+		case 'terminal':
+			return 'bg-transparent border-none shadow-none p-0';
+		case 'neumorphic':
+			return 'neumorph-card p-8';
+		case 'nier':
+			return 'nier-card p-8';
+		case 'gnome':
+			return 'gnome-card p-8';
+		default:
+			return 'modern-card p-8';
 		}
 	};
 
 	const getArticleClasses = () => {
 		switch (theme) {
-			case 'terminal':
-				return 'bg-transparent border-none shadow-none p-0 hover:bg-transparent mb-8';
-			case 'neumorphic':
-				return 'neumorph-card p-6 hover:shadow-lg';
-			case 'nier':
-				return 'nier-card p-6 hover:scale-102 transition-transform';
-			case 'gnome':
-				return 'gnome-card p-6 hover:bg-purple-800 transition-colors';
-			default:
-				return 'modern-card-sm p-6 hover:shadow-md';
+		case 'terminal':
+			return 'bg-transparent border-none shadow-none p-0 hover:bg-transparent mb-8';
+		case 'neumorphic':
+			return 'neumorph-card p-6 hover:shadow-lg';
+		case 'nier':
+			return 'nier-card p-6 hover:scale-102 transition-transform';
+		case 'gnome':
+			return 'gnome-card p-6 hover:bg-purple-800 transition-colors';
+		default:
+			return 'modern-card-sm p-6 hover:shadow-md';
 		}
 	};
 
@@ -85,22 +85,22 @@ export function BlogListPage() {
 		}
 
 		switch (theme) {
-			case 'terminal':
-			case 'gnome':
-				return <BlogPostTerminal posts={blog} />;
+		case 'terminal':
+		case 'gnome':
+			return <BlogPostTerminal posts={blog} />;
 
-			case 'neumorphic':
-			case 'nier':
-			case 'modern':
-			default:
-				return blog.map(post => (
-					<BlogPostCard
-						key={post.slug}
-						post={post}
-						theme={theme}
-						articleClasses={getArticleClasses()}
-					/>
-				));
+		case 'neumorphic':
+		case 'nier':
+		case 'modern':
+		default:
+			return blog.map(post => (
+				<BlogPostCard
+					key={post.slug}
+					post={post}
+					theme={theme}
+					articleClasses={getArticleClasses()}
+				/>
+			));
 		}
 	};
 

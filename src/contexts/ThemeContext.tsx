@@ -24,7 +24,7 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
 				return { ...defaultSettings, ...parsed };
 			} catch {
 				console.warn(
-					'Failed to parse saved theme settings during initialization'
+					'Failed to parse saved theme settings during initialization',
 				);
 			}
 		}

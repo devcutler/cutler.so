@@ -45,31 +45,31 @@ export function SettingsPanel() {
 
 	const getButtonClasses = () => {
 		switch (theme) {
-			case 'terminal':
-				return 'fixed bottom-4 left-4 z-50 w-12 h-12 bg-transparent border border-gray-600 hover:border-gray-400 rounded-none shadow-none hover:shadow-none transition-all duration-200 flex items-center justify-center group';
-			case 'neumorphic':
-				return 'fixed bottom-4 left-4 z-50 w-12 h-12 neumorph-card hover:shadow-lg transition-all duration-200 flex items-center justify-center group';
-			case 'nier':
-				return 'fixed bottom-4 left-4 z-50 w-12 h-12 bg-gray-800 border-2 border-gray-800 rounded-none hover:bg-gray-600 transition-all duration-200 flex items-center justify-center group';
-			case 'gnome':
-				return 'fixed bottom-4 left-4 z-50 w-12 h-12 gnome-button hover:bg-blue-600 transition-all duration-200 flex items-center justify-center group';
-			default:
-				return 'fixed bottom-4 left-4 z-50 w-12 h-12 bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-xl transition-all duration-200 flex items-center justify-center group';
+		case 'terminal':
+			return 'fixed bottom-4 left-4 z-50 w-12 h-12 bg-transparent border border-gray-600 hover:border-gray-400 rounded-none shadow-none hover:shadow-none transition-all duration-200 flex items-center justify-center group';
+		case 'neumorphic':
+			return 'fixed bottom-4 left-4 z-50 w-12 h-12 neumorph-card hover:shadow-lg transition-all duration-200 flex items-center justify-center group';
+		case 'nier':
+			return 'fixed bottom-4 left-4 z-50 w-12 h-12 bg-gray-800 border-2 border-gray-800 rounded-none hover:bg-gray-600 transition-all duration-200 flex items-center justify-center group';
+		case 'gnome':
+			return 'fixed bottom-4 left-4 z-50 w-12 h-12 gnome-button hover:bg-blue-600 transition-all duration-200 flex items-center justify-center group';
+		default:
+			return 'fixed bottom-4 left-4 z-50 w-12 h-12 bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-xl transition-all duration-200 flex items-center justify-center group';
 		}
 	};
 
 	const getPanelClasses = () => {
 		switch (theme) {
-			case 'terminal':
-				return 'fixed bottom-20 left-4 z-50 w-56 bg-black border border-gray-600 rounded-none shadow-none overflow-hidden';
-			case 'neumorphic':
-				return 'fixed bottom-20 left-4 z-50 w-56 neumorph-card border-none overflow-hidden';
-			case 'nier':
-				return 'fixed bottom-20 left-4 z-50 w-56 bg-amber-50 border-2 border-gray-800 rounded-none overflow-hidden';
-			case 'gnome':
-				return 'fixed bottom-20 left-4 z-50 w-56 gnome-card border-none overflow-hidden';
-			default:
-				return 'fixed bottom-20 left-4 z-50 w-56 bg-white border border-gray-200 rounded-lg shadow-lg overflow-hidden';
+		case 'terminal':
+			return 'fixed bottom-20 left-4 z-50 w-56 bg-black border border-gray-600 rounded-none shadow-none overflow-hidden';
+		case 'neumorphic':
+			return 'fixed bottom-20 left-4 z-50 w-56 neumorph-card border-none overflow-hidden';
+		case 'nier':
+			return 'fixed bottom-20 left-4 z-50 w-56 bg-amber-50 border-2 border-gray-800 rounded-none overflow-hidden';
+		case 'gnome':
+			return 'fixed bottom-20 left-4 z-50 w-56 gnome-card border-none overflow-hidden';
+		default:
+			return 'fixed bottom-20 left-4 z-50 w-56 bg-white border border-gray-200 rounded-lg shadow-lg overflow-hidden';
 		}
 	};
 
@@ -106,30 +106,30 @@ export function SettingsPanel() {
 							<div className="space-y-1">
 								{themes.map(themeOption => {
 									const getThemeButtonClasses = (
-										buttonTheme: ThemeType
+										buttonTheme: ThemeType,
 									) => {
 										const baseClasses =
 											'w-full text-left p-2 text-sm leading-tight transition-colors h-14 border-2';
 										const fontClass = `theme-button-${buttonTheme}`;
 
 										switch (buttonTheme) {
-											case 'terminal':
-												return `${baseClasses} ${fontClass} rounded-none`;
-											case 'modern':
-												return `${baseClasses} ${fontClass} rounded`;
-											case 'neumorphic':
-												return `${baseClasses} ${fontClass} transition-all rounded-lg border-transparent`;
-											case 'nier':
-												return `${baseClasses} ${fontClass} rounded-none font-semibold`;
-											case 'gnome':
-												return `${baseClasses} ${fontClass} rounded-none`;
-											default:
-												return `${baseClasses} ${fontClass} rounded`;
+										case 'terminal':
+											return `${baseClasses} ${fontClass} rounded-none`;
+										case 'modern':
+											return `${baseClasses} ${fontClass} rounded`;
+										case 'neumorphic':
+											return `${baseClasses} ${fontClass} transition-all rounded-lg border-transparent`;
+										case 'nier':
+											return `${baseClasses} ${fontClass} rounded-none font-semibold`;
+										case 'gnome':
+											return `${baseClasses} ${fontClass} rounded-none`;
+										default:
+											return `${baseClasses} ${fontClass} rounded`;
 										}
 									};
 
 									const getThemeButtonStyle = (
-										buttonTheme: ThemeType
+										buttonTheme: ThemeType,
 									) => {
 										const isSelected =
 											themeOption.value === theme;
@@ -146,16 +146,16 @@ export function SettingsPanel() {
 										};
 
 										switch (buttonTheme) {
-											case 'neumorphic':
-												baseStyle.boxShadow = isSelected
-													? 'inset 3px 3px 6px #d1d1d1, inset -3px -3px 6px #ffffff'
-													: 'inset -2px -2px 4px #ffffff, inset 2px 2px 4px #d1d1d1';
-												baseStyle.backgroundColor =
+										case 'neumorphic':
+											baseStyle.boxShadow = isSelected
+												? 'inset 3px 3px 6px #d1d1d1, inset -3px -3px 6px #ffffff'
+												: 'inset -2px -2px 4px #ffffff, inset 2px 2px 4px #d1d1d1';
+											baseStyle.backgroundColor =
 													'var(--bg-secondary)';
-												baseStyle.color = isSelected
-													? 'var(--accent-color)'
-													: 'var(--text-primary)';
-												break;
+											baseStyle.color = isSelected
+												? 'var(--accent-color)'
+												: 'var(--text-primary)';
+											break;
 										}
 
 										return baseStyle;
@@ -168,10 +168,10 @@ export function SettingsPanel() {
 												setTheme(themeOption.value)
 											}
 											className={getThemeButtonClasses(
-												themeOption.value
+												themeOption.value,
 											)}
 											style={getThemeButtonStyle(
-												themeOption.value
+												themeOption.value,
 											)}
 										>
 											<div className="font-medium">

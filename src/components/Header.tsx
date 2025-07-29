@@ -6,16 +6,16 @@ export function Header() {
 
 	const getHeaderClasses = () => {
 		switch (theme) {
-			case 'terminal':
-				return 'border-b-0';
-			case 'neumorphic':
-				return 'neumorph-card border-b-0';
-			case 'nier':
-				return 'nier-card border-b-0';
-			case 'gnome':
-				return 'gnome-card border-b-0';
-			default:
-				return 'bg-white border-b border-gray-200 shadow-sm';
+		case 'terminal':
+			return 'border-b-0';
+		case 'neumorphic':
+			return 'neumorph-card border-b-0';
+		case 'nier':
+			return 'nier-card border-b-0';
+		case 'gnome':
+			return 'gnome-card border-b-0';
+		default:
+			return 'bg-white border-b border-gray-200 shadow-sm';
 		}
 	};
 

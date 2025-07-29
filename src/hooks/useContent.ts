@@ -37,7 +37,7 @@ export function useContent() {
 					const response = await fetch('/content-index.json');
 					if (!response.ok) {
 						throw new Error(
-							`Failed to load content index: ${response.status} ${response.statusText}`
+							`Failed to load content index: ${response.status} ${response.statusText}`,
 						);
 					}
 					const data = await response.json();
@@ -65,7 +65,7 @@ export function useContent() {
 	}, []);
 
 	const getContentBySlug = async (
-		slug: string
+		slug: string,
 	): Promise<ContentItem | null> => {
 		if (!state.index) return null;
 
@@ -76,7 +76,7 @@ export function useContent() {
 		}
 
 		const indexItem = [...state.index.pages, ...state.index.blog].find(
-			item => item.slug === normalizedSlug
+			item => item.slug === normalizedSlug,
 		);
 
 		if (!indexItem) return null;

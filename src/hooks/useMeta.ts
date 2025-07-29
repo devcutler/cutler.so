@@ -41,7 +41,7 @@ export function useMeta({
 
 			if (!sanitizedProperty || !sanitizedContent) {
 				console.warn(
-					'Meta tag parameters became empty after sanitization'
+					'Meta tag parameters became empty after sanitization',
 				);
 				return;
 			}
@@ -50,14 +50,14 @@ export function useMeta({
 			if (!validPropertyPattern.test(sanitizedProperty)) {
 				console.warn(
 					'Invalid meta property format:',
-					sanitizedProperty
+					sanitizedProperty,
 				);
 				return;
 			}
 
 			let meta =
 				document.querySelector(
-					`meta[property="${sanitizedProperty}"]`
+					`meta[property="${sanitizedProperty}"]`,
 				) ||
 				document.querySelector(`meta[name="${sanitizedProperty}"]`);
 
