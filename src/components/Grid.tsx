@@ -24,7 +24,14 @@ export const Grid: React.FC<GridProps> = ({
     : '';
   
   const gapClass = typeof gap === 'number' 
-    ? `gap-${gap}` 
+    ? gap === 1 ? 'gap-1' :
+      gap === 2 ? 'gap-2' :
+      gap === 3 ? 'gap-3' :
+      gap === 4 ? 'gap-4' :
+      gap === 5 ? 'gap-5' :
+      gap === 6 ? 'gap-6' :
+      gap === 8 ? 'gap-8' :
+      gap === 12 ? 'gap-12' : `gap-${gap}`
     : gap;
 
   return (
