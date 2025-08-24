@@ -1,0 +1,180 @@
+
+.neumorphic {
+  --bg-primary: #e0e5ec;
+  --bg-secondary: #e0e5ec;
+  --bg-tertiary: #d1d9e6;
+  --text-primary: #4a5568;
+  --text-secondary: #718096;
+  --text-muted: #a0aec0;
+  --accent-color: #667eea;
+  --border-color: #cbd5e0;
+  --error-color: #e53e3e;
+  
+  
+  --code-bg: #2d3748;
+  --code-text: #e2e8f0;
+  --code-keyword: #9f7aea;
+  --code-string: #68d391;
+  --code-comment: #a0aec0;
+  --code-number: #f6ad55;
+  --code-function: #63b3ed;
+  --code-variable: #e2e8f0;
+  --code-type: #4fd1c7;
+  --code-operator: #fc8181;
+  --code-punctuation: #cbd5e0;
+  --code-property: #f687b3;
+  --code-class: #9f7aea;
+  --code-constant: #f6ad55;
+  --code-tag: #63b3ed;
+  --code-attribute: #68d391;
+  --code-line-number: #a0aec0;
+  
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+.neumorphic .card {
+  background-color: var(--bg-primary);
+  border: none;
+  border-radius: 1rem;
+  box-shadow: 
+    9px 9px 16px #a3b1c6,
+    -9px -9px 16px #ffffff;
+}
+
+
+.neumorphic a.block:hover .card {
+  box-shadow: 
+    6px 6px 12px #a3b1c6,
+    -6px -6px 12px #ffffff;
+}
+
+.neumorphic .card-inset {
+  background-color: var(--bg-primary);
+  border: none;
+  border-radius: 1rem;
+  box-shadow: 
+    inset 6px 6px 12px #a3b1c6,
+    inset -6px -6px 12px #ffffff;
+  padding: 1rem;
+}
+
+.neumorphic .header {
+  background-color: var(--bg-primary);
+  border: none;
+  box-shadow: 
+    0 2px 4px #a3b1c6,
+    0 -1px 2px #ffffff;
+}
+
+.neumorphic .input {
+  background-color: var(--bg-primary);
+  border: none;
+  border-radius: 0.75rem;
+  box-shadow: 
+    inset 4px 4px 8px #a3b1c6,
+    inset -4px -4px 8px #ffffff;
+  color: var(--text-primary);
+}
+
+.neumorphic .button {
+  background-color: var(--bg-primary);
+  border: none;
+  border-radius: 0.75rem;
+  box-shadow: 
+    6px 6px 12px #a3b1c6,
+    -6px -6px 12px #ffffff;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.neumorphic .button:hover {
+  box-shadow: 
+    4px 4px 8px #a3b1c6,
+    -4px -4px 8px #ffffff;
+}
+
+.neumorphic .button:active {
+  box-shadow: 
+    inset 3px 3px 6px #a3b1c6,
+    inset -3px -3px 6px #ffffff;
+}
+
+
+.neumorphic .markdown-alert {
+  padding: 1.25rem 1.5rem;
+  background-color: var(--bg-primary);
+  border: none;
+  border-radius: 1rem;
+  box-shadow: 
+    inset 4px 4px 8px #a3b1c6,
+    inset -4px -4px 8px #ffffff;
+}
+
+
+.neumorphic .alert-note {
+  border-left: 4px solid #4299e1;
+}
+
+.neumorphic .alert-note .markdown-alert-title,
+.neumorphic .alert-note .alert-icon {
+  color: #4299e1;
+}
+
+.neumorphic .alert-tip {
+  border-left: 4px solid #48bb78;
+}
+
+.neumorphic .alert-tip .markdown-alert-title,
+.neumorphic .alert-tip .alert-icon {
+  color: #48bb78;
+}
+
+.neumorphic .alert-important {
+  border-left: 4px solid #9f7aea;
+}
+
+.neumorphic .alert-important .markdown-alert-title,
+.neumorphic .alert-important .alert-icon {
+  color: #9f7aea;
+}
+
+.neumorphic .alert-warning {
+  border-left: 4px solid #ed8936;
+}
+
+.neumorphic .alert-warning .markdown-alert-title,
+.neumorphic .alert-warning .alert-icon {
+  color: #ed8936;
+}
+
+.neumorphic .alert-caution {
+  border-left: 4px solid #e53e3e;
+}
+
+.neumorphic .alert-caution .markdown-alert-title,
+.neumorphic .alert-caution .alert-icon {
+  color: #e53e3e;
+}
+
+
+.neumorphic .code-block {
+  border-radius: 1rem;
+}
+
+
+.neumorphic .code-keyword { color: var(--code-keyword); font-weight: 500; }
+.neumorphic .code-string { color: var(--code-string); }
+.neumorphic .code-comment { color: var(--code-comment); font-style: italic; }
+.neumorphic .code-number { color: var(--code-number); }
+.neumorphic .code-function { color: var(--code-function); font-weight: 500; }
+.neumorphic .code-variable { color: var(--code-variable); }
+.neumorphic .code-type { color: var(--code-type); font-weight: 500; }
+.neumorphic .code-operator { color: var(--code-operator); }
+.neumorphic .code-punctuation { color: var(--code-punctuation); }
+.neumorphic .code-property { color: var(--code-property); }
+.neumorphic .code-class { color: var(--code-class); font-weight: 500; }
+.neumorphic .code-constant { color: var(--code-constant); }
+.neumorphic .code-tag { color: var(--code-tag); font-weight: 500; }
+.neumorphic .code-attribute { color: var(--code-attribute); }

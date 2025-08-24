@@ -1,0 +1,28 @@
+
+@import 'highlight.js/styles/github-dark.css';
+
+
+.hljs {
+  border-radius: var(--code-border-radius, 0.5rem);
+  margin: 1rem 0;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+
+.hljs .highlighted {
+  background-color: rgba(255, 255, 255, 0.1);
+  display: block;
+  margin: 0 -1rem;
+  padding: 0 1rem;
+}
+
+
+.terminal .hljs {
+  border-radius: 0;
+}
+
+.modern .hljs {
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+}

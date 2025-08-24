@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+
+.input {
+  padding: 0.5rem 0.75rem;
+  outline: none;
+  transition: border-color 0.15s ease-in-out;
+}
+
+.button {
+  padding: 0.5rem 1rem;
+  outline: none;
+  transition: all 0.15s ease-in-out;
+  cursor: pointer;
+}
+
+.button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.card {
+  transition: all 0.2s ease;
+}
+
+.badge {
+  padding: 0.25rem 0.5rem;
+  border-radius: 9999px;
+  background-color: var(--bg-tertiary);
+  color: var(--text-muted);
+  border: 1px solid var(--border-color);
+}
+
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: opacity 0.15s ease-in-out;
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+
+.markdown-alert {
+  padding: 1rem 1.25rem;
+  border-radius: 0.5rem;
+}
+
+.markdown-alert-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0 0 0.75rem 0;
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+.alert-icon {
+  width: 1rem;
+  height: 1rem;
+  flex-shrink: 0;
+}
+
+
+@import "./themes/terminal.css";
+@import "./themes/modern.css";
+@import "./themes/neumorphic.css";
+@import "./themes/nier.css";
+@import "./themes/gnome.css";

@@ -1,0 +1,122 @@
+
+.gnome {
+  --bg-primary: #300a24;
+  --bg-secondary: #2c0a1e;
+  --bg-tertiary: #3c1028;
+  --text-primary: #ffffff;
+  --text-secondary: #d3d3d3;
+  --text-muted: #888888;
+  --accent-color: #ad7fa8;
+  --border-color: #75507b;
+  --error-color: #cc0000;
+  
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: 'Ubuntu Mono', 'Consolas', 'Monaco', 'Courier New', monospace;
+}
+
+.gnome .card {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 0.375rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+
+.gnome a.block:hover .card {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 1px var(--accent-color), 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.gnome .header {
+  background-color: var(--bg-primary);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.gnome .input {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  border-radius: 0.25rem;
+  font-family: inherit;
+}
+
+.gnome .input:focus {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 2px rgba(173, 127, 168, 0.3);
+}
+
+.gnome .button {
+  background-color: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  border-radius: 0.25rem;
+  font-family: inherit;
+  font-weight: normal;
+}
+
+.gnome .button:hover {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+}
+
+
+.gnome .markdown-alert {
+  padding: 0.75rem 1rem;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 0.25rem;
+  font-family: inherit;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.gnome .markdown-alert-title {
+  margin: 0 0 0.5rem 0;
+  font-weight: bold;
+}
+
+
+.gnome .alert-note {
+  border-left: 4px solid #729fcf; 
+}
+
+.gnome .alert-note .markdown-alert-title,
+.gnome .alert-note .alert-icon {
+  color: #729fcf;
+}
+
+.gnome .alert-tip {
+  border-left: 4px solid #8ae234; 
+}
+
+.gnome .alert-tip .markdown-alert-title,
+.gnome .alert-tip .alert-icon {
+  color: #8ae234;
+}
+
+.gnome .alert-important {
+  border-left: 4px solid #ad7fa8; 
+}
+
+.gnome .alert-important .markdown-alert-title,
+.gnome .alert-important .alert-icon {
+  color: #ad7fa8;
+}
+
+.gnome .alert-warning {
+  border-left: 4px solid #fcaf3e; 
+}
+
+.gnome .alert-warning .markdown-alert-title,
+.gnome .alert-warning .alert-icon {
+  color: #fcaf3e;
+}
+
+.gnome .alert-caution {
+  border-left: 4px solid #ef2929; 
+}
+
+.gnome .alert-caution .markdown-alert-title,
+.gnome .alert-caution .alert-icon {
+  color: #ef2929;
+}

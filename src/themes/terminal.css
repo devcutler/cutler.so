@@ -1,0 +1,162 @@
+
+.terminal {
+  --bg-primary: #000000;
+  --bg-secondary: #000000;
+  --bg-tertiary: #000000;
+  --text-primary: #ffffff;  
+  --text-secondary: #e0e0e0;  
+  --text-muted: #999999;  
+  --accent-color: #ffffff;  
+  --border-color: #808080;
+  --error-color: #ff0000;
+  
+  
+  --code-bg: #000000;
+  --code-text: #ffffff;
+  --code-keyword: #ffffff;
+  --code-string: #ffffff;
+  --code-comment: #808080;
+  --code-number: #ffffff;
+  --code-function: #ffffff;
+  --code-variable: #ffffff;
+  --code-type: #ffffff;
+  --code-operator: #ffffff;
+  --code-punctuation: #ffffff;
+  --code-property: #ffffff;
+  --code-class: #ffffff;
+  --code-constant: #ffffff;
+  --code-tag: #ffffff;
+  --code-attribute: #ffffff;
+  --code-line-number: #808080;
+  --code-border-radius: 0;
+  --code-box-shadow: none;
+  
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', 'Fira Mono', 'Droid Sans Mono', 'Source Code Pro', monospace;
+}
+
+.terminal .card {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.terminal .card:hover {
+  border-color: var(--accent-color);
+  box-shadow: none;
+}
+
+
+.terminal .text-muted-foreground {
+  color: var(--text-muted);
+}
+
+
+.terminal a {
+  color: var(--text-secondary);  
+}
+
+
+.terminal a.block:hover {
+  opacity: 0.9;
+}
+
+.terminal a.block:hover * {
+  color: inherit;  
+}
+
+
+.terminal a:not(.block):hover {
+  color: var(--text-muted);  
+}
+
+
+.terminal a.font-medium {
+  color: var(--text-primary);  
+}
+
+
+.terminal nav a {
+  font-family: inherit;  
+}
+
+.terminal .header {
+  background-color: var(--bg-primary);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.terminal .input {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  border-radius: 0;
+}
+
+.terminal .input:focus {
+  border-color: var(--accent-color);
+}
+
+.terminal .button {
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  border-radius: 0;
+  font-family: inherit;
+}
+
+.terminal .button:hover {
+  background-color: var(--text-primary);
+  color: var(--bg-primary);
+}
+
+
+.terminal .markdown-alert {
+  padding: 0.75rem;
+  border: none;
+  border-radius: 0;
+  font-family: inherit;
+  color: #000000; 
+}
+
+.terminal .markdown-alert-title {
+  margin: 0 0 0.5rem 0;
+  font-weight: bold;
+  font-size: 1rem;
+  text-transform: uppercase;
+  color: inherit;
+}
+
+.terminal .alert-icon {
+  width: 2ch; 
+  height: 1em; 
+  color: inherit;
+}
+
+
+.terminal .alert-note {
+  background-color: #0087ff; 
+  color: #ffffff; 
+}
+
+.terminal .alert-tip {
+  background-color: #00ff00; 
+  color: #000000; 
+}
+
+.terminal .alert-important {
+  background-color: #ff00ff; 
+  color: #ffffff; 
+}
+
+.terminal .alert-warning {
+  background-color: #ffff00; 
+  color: #000000; 
+}
+
+.terminal .alert-caution {
+  background-color: #ff0000; 
+  color: #ffffff; 
+}
+
