@@ -25,7 +25,14 @@ export default function Page() {
           performance and SEO, while still maintaining full React interactivity when needed.
         </Text>
         <Text className="text-sm text-muted-foreground">
-          Built on {new Date(buildTime).toLocaleDateString()} at {new Date(buildTime).toLocaleTimeString()}
+          Built on {new Date(buildTime).toLocaleDateString('en-US', {
+            month: 'short',
+            day: 'numeric',
+            year: 'numeric',
+            hour: 'numeric',
+            minute: '2-digit',
+            hour12: true
+          })}
         </Text>
       </Section>
 
@@ -42,7 +49,7 @@ export default function Page() {
             </Block>
           </Link>
 
-          <Link href="/about/projects" className="block">
+          <Link href="/projects" className="block">
             <Block className="hover:shadow-lg transition-shadow h-full">
               <BlockContent>
                 <Subheading className="mb-2">
@@ -63,14 +70,14 @@ export default function Page() {
               </BlockContent>
             </Block>
           </Link>
-          
+
           <Link href="/contact" className="block">
             <Block className="hover:shadow-lg transition-shadow h-full">
               <BlockContent>
                 <Subheading className="mb-2">
                   <Icon icon={Pencil} /> Read my blog
                 </Subheading>
-                <Text className="text-muted-foreground">I write about my regular experiences and explorations with tech</Text>
+                <Text className="text-muted-foreground">I write about my regular experiences and explorations with tech.</Text>
               </BlockContent>
             </Block>
           </Link>
@@ -97,7 +104,14 @@ export default function Page() {
                   <div className="flex items-center justify-between mt-4">
                     {latestPost.date && (
                       <time className="text-sm text-muted-foreground" dateTime={latestPost.date.toISOString()}>
-                        {latestPost.date.toLocaleDateString()}
+                        {latestPost.date.toLocaleDateString('en-US', {
+                          month: 'short',
+                          day: 'numeric',
+                          year: 'numeric',
+                          hour: 'numeric',
+                          minute: '2-digit',
+                          hour12: true
+                        })}
                       </time>
                     )}
 
