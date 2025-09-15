@@ -1,5 +1,5 @@
 import { useData } from 'vike-react/useData';
-import { User, Rocket, FileText, Mail, Palette, Pencil } from 'lucide-react';
+import { User, Rocket, FileText, Mail, Palette, Pencil, ExternalLink } from 'lucide-react';
 import { Link } from '@/components/Link';
 import { Content } from '@/components/Content';
 import { Section } from '@/components/Section';
@@ -22,7 +22,10 @@ export default function Page() {
         <Text>
           This site is built with Vike, React, and TypeScript as a statically generated
           multi-page application. Every page is pre-rendered at build time for optimal
-          performance and SEO, while still maintaining full React interactivity when needed.
+          performance and SEO, while still maintaining full React interactivity when needed.{' '}
+          <Link href="/projects/cutler.so" className="inline-flex items-center gap-1 underline">
+            Read more about it here <ExternalLink size={14} />
+          </Link>
         </Text>
         <Text className="text-sm text-muted-foreground">
           Built on {new Date(buildTime).toLocaleDateString('en-US', {
@@ -71,7 +74,7 @@ export default function Page() {
             </Block>
           </Link>
 
-          <Link href="/contact" className="block">
+          <Link href="/blog" className="block">
             <Block className="hover:shadow-lg transition-shadow h-full">
               <BlockContent>
                 <Subheading className="mb-2">

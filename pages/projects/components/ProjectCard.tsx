@@ -47,12 +47,13 @@ export function ProjectCard({ project }: ProjectCardProps) {
   );
 
   if (project.link !== '#') {
+    const isExternal = project.link.startsWith('http');
+    
     return (
       <a 
         href={project.link}
         className="block h-full"
-        target="_blank"
-        rel="noopener noreferrer"
+        {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
       >
         <Block className="h-full flex flex-col hover:shadow-lg transition-shadow">
           {content}

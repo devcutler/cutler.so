@@ -8,7 +8,7 @@ interface TerminalOutputProps {
 export function TerminalOutput({ children, className = '' }: TerminalOutputProps) {
   return (
     <div 
-      className={`mt-1 whitespace-pre-wrap font-mono text-sm ${className}`}
+      className={`whitespace-pre-wrap font-mono text-sm ${className}`}
     >
       {children}
     </div>

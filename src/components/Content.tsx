@@ -7,7 +7,7 @@ interface ContentProps {
 
 export const Content: React.FC<ContentProps> = ({ children, className = '' }) => {
   return (
-    <main className={`container mx-auto px-4 py-12 max-w-4xl ${className}`}>
+    <main className={`container mx-auto px-4 py-12 max-w-4xl space-y-8 ${className}`}>
       {children}
     </main>
   );

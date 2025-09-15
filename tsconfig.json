@@ -17,7 +17,8 @@
     ],
     "types": [
       "vite/client",
-      "vike-react"
+      "vike-react",
+      "@types/umami"
     ],
     "jsx": "react-jsx",
     "jsxImportSource": "react",

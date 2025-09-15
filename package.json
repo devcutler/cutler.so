@@ -6,6 +6,7 @@
   },
   "dependencies": {
     "@cutler/icons": "workspace:*",
+    "@tailwindcss/typography": "^0.5.16",
     "@vitejs/plugin-react": "^4.7.0",
     "clsx-for-tailwind": "^1.0.0",
     "gray-matter": "^4.0.3",
@@ -22,15 +23,14 @@
     "remark-rehype": "^11.1.2",
     "unist-util-visit": "^5.0.0",
     "vike": "^0.4.236",
-    "vike-react": "^0.6.5",
-    "vscode-oniguruma": "^2.0.1",
-    "vscode-textmate": "^9.2.0"
+    "vike-react": "^0.6.5"
   },
   "devDependencies": {
     "@tailwindcss/vite": "^4.1.11",
     "@types/node": "^24.1.0",
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
+    "@types/umami": "^2.10.1",
     "highlight.js": "^11.11.1",
     "tailwindcss": "^4.1.11",
     "typescript": "^5.8.3",

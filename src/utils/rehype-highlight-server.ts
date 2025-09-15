@@ -1,5 +1,14 @@
 import { visit } from 'unist-util-visit';
-import hljs from 'highlight.js';
+import hljs from 'highlight.js/lib/core';
+import javascript from 'highlight.js/lib/languages/javascript';
+import typescript from 'highlight.js/lib/languages/typescript';
+import bash from 'highlight.js/lib/languages/bash';
+
+hljs.registerLanguage('javascript', javascript);
+hljs.registerLanguage('typescript', typescript);
+hljs.registerLanguage('jsx', javascript);
+hljs.registerLanguage('tsx', typescript);
+hljs.registerLanguage('bash', bash);
 
 export default function rehypeHighlightServer() {
   return (tree: any) => {
@@ -17,18 +26,14 @@ export default function rehypeHighlightServer() {
               const result = hljs.highlight(code, { language });
               highlightedCode = result.value;
             } else {
-              const result = hljs.highlightAuto(code);
-              highlightedCode = result.value;
+              highlightedCode = code;
             }
-            
-                        codeNode.children = [{ 
-              type: 'raw', 
-              value: highlightedCode 
-            }];
-            
-                        codeNode.properties = {
+
+            codeNode.children = [];
+            codeNode.properties = {
               ...codeNode.properties,
-              className: ['hljs', `language-${language}`]
+              className: ['hljs', `language-${language}`],
+              dangerouslySetInnerHTML: { __html: highlightedCode }
             };
           } catch (error) {
             console.warn('Highlight.js failed:', error);

@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useTheme } from '@/contexts/ThemeContext';
+import { useUmami } from '@/hooks/useUmami';
 import { Settings, Check } from 'lucide-react';
 import type { ThemeType } from '@/types/theme';
 
@@ -40,10 +41,12 @@ const themeOptions: ThemeOption[] = [
 export function SettingsPanel() {
   const [isOpen, setIsOpen] = useState(false);
   const { theme, setTheme } = useTheme();
+  const { track } = useUmami();
 
   const handleThemeChange = (newTheme: ThemeType) => {
+    track('Theme Change', { theme: newTheme });
     setTheme(newTheme);
-      };
+  };
 
   const getSettingsButtonClasses = () => {
     const baseClasses = "fixed bottom-4 left-4 z-[9999] w-12 h-12 text-base cursor-pointer transition-all duration-300 flex items-center justify-center";

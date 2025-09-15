@@ -1,9 +1,10 @@
 import { useData } from "vike-react/useData";
 import type { BlogPost } from "./+data";
 import "@/styles/highlight.css";
+import { MarkdownRenderer } from "@/components/MarkdownRenderer";
 
 export default function Page() {
-  const { title, htmlContent, date, tags } = useData<BlogPost>();
+  const { title, content, date, tags } = useData<BlogPost>();
 
   return (
     <article className="max-w-4xl mx-auto px-4 py-8">
@@ -16,9 +17,9 @@ export default function Page() {
         )}
       </header>
 
-      <div 
+      <MarkdownRenderer
         className="prose prose-lg max-w-none"
-        dangerouslySetInnerHTML={{ __html: htmlContent }}
+        content={content}
       />
 
       {tags && tags.length > 0 && (

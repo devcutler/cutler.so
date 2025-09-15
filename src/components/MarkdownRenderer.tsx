@@ -54,25 +54,25 @@ function remarkGithubAlerts() {
   return (tree: any) => {
     visit(tree, 'blockquote', (node) => {
       if (!node.children || node.children.length === 0) return;
-      
+
       const firstChild = node.children[0];
       if (firstChild.type !== 'paragraph' || !firstChild.children) return;
-      
+
       const firstText = firstChild.children[0];
       if (firstText.type !== 'text') return;
-      
+
       const alertMatch = firstText.value.match(/^\[!(NOTE|TIP|IMPORTANT|WARNING|CAUTION)\]/);
       if (!alertMatch) return;
-      
+
       const alertType = alertMatch[1].toLowerCase();
-      
-            firstText.value = firstText.value.replace(/^\[!(NOTE|TIP|IMPORTANT|WARNING|CAUTION)\]\s*/, '');
-      
-            if (!firstText.value.trim()) {
+
+      firstText.value = firstText.value.replace(/^\[!(NOTE|TIP|IMPORTANT|WARNING|CAUTION)\]\s*/, '');
+
+      if (!firstText.value.trim()) {
         node.children.shift();
       }
-      
-            node.type = 'element';
+
+      node.type = 'element';
       node.tagName = 'markdown-alert';
       node.properties = { type: alertType };
       node.data = {
@@ -82,8 +82,6 @@ function remarkGithubAlerts() {
     });
   };
 }
-
-
 
 export function MarkdownRenderer({
   content,

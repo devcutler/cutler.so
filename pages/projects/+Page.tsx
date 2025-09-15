@@ -22,7 +22,7 @@ export default function Page() {
               name: 'cutler.so',
               description: 'This personal website built with Vike, React, and TypeScript. Features SSG, multiple themes, and a markdown-based blog.',
               technologies: ['React', 'TypeScript', 'Vike', 'Tailwind CSS'],
-              link: 'https://github.com/devcutler/cutler.so',
+              link: '/projects/cutler.so',
               type: 'Personal'
             }}
           />
