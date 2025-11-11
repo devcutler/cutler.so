@@ -1,5 +1,6 @@
 import { Badge } from '@/components/Badge';
 import { Block, BlockContent } from '@/components/Block';
+import type { ReactElement } from 'react';
 
 const typeColors = {
 	'Personal': 'text-blue-600',
@@ -19,7 +20,7 @@ interface ProjectCardProps {
 	project: Project;
 }
 
-export function ProjectCard({ project }: ProjectCardProps) {
+export function ProjectCard({ project }: ProjectCardProps): ReactElement {
 
 	const content = (
 		<BlockContent>

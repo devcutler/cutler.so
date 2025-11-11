@@ -6,10 +6,11 @@ import { Section } from '@/components/Section';
 import { Block, BlockContent } from '@/components/Block';
 import { Grid } from '@/components/Grid';
 import { Icon } from '@/components/Icon';
-import { Title, Heading, Subheading, Text } from '@/components/Text';
+import { TextVariants } from '@/components/Text';
 import type { BlogEntry } from '@/types/blog';
+import type { ReactElement } from 'react';
 
-export default function Page() {
+export default function Page(): ReactElement {
 	const { latestPost, buildTime } = useData<{
 		latestPost: BlogEntry | null;
 		buildTime: string;
@@ -18,16 +19,16 @@ export default function Page() {
 	return (
 		<Content className="max-w-6xl">
 			<Section className="mb-12">
-				<Title>Welcome to cutler.so</Title>
-				<Text>
+				<TextVariants.Title>Welcome to cutler.so</TextVariants.Title>
+				<TextVariants.Text>
 					This site is built with Vike, React, and TypeScript as a statically generated
 					multi-page application. Every page is pre-rendered at build time for optimal
 					performance and SEO, while still maintaining full React interactivity when needed.{' '}
 					<Link href="/projects/cutler.so" className="inline-flex items-center gap-1 underline">
 						Read more about it here <ExternalLink size={14} />
 					</Link>
-				</Text>
-				<Text className="text-sm text-muted-foreground">
+				</TextVariants.Text>
+				<TextVariants.Text className="text-sm text-muted-foreground">
 					Built on {new Date(buildTime).toLocaleDateString('en-US', {
 						month: 'short',
 						day: 'numeric',
@@ -36,7 +37,7 @@ export default function Page() {
 						minute: '2-digit',
 						hour12: true,
 					})}
-				</Text>
+				</TextVariants.Text>
 			</Section>
 
 			<Section className="mb-8">
@@ -44,10 +45,10 @@ export default function Page() {
 					<Link href="/about" className="block">
 						<Block className="hover:shadow-lg transition-shadow h-full">
 							<BlockContent>
-								<Subheading className="mb-2">
+								<TextVariants.Subheading className="mb-2">
 									<Icon icon={User} /> Personal Information
-								</Subheading>
-								<Text className="text-muted-foreground">Learn more about me, my background, and what I do.</Text>
+								</TextVariants.Subheading>
+								<TextVariants.Text className="text-muted-foreground">Learn more about me, my background, and what I do.</TextVariants.Text>
 							</BlockContent>
 						</Block>
 					</Link>
@@ -55,10 +56,10 @@ export default function Page() {
 					<Link href="/projects" className="block">
 						<Block className="hover:shadow-lg transition-shadow h-full">
 							<BlockContent>
-								<Subheading className="mb-2">
+								<TextVariants.Subheading className="mb-2">
 									<Icon icon={Rocket} /> My Projects
-								</Subheading>
-								<Text className="text-muted-foreground">Explore the projects I've worked on and built.</Text>
+								</TextVariants.Subheading>
+								<TextVariants.Text className="text-muted-foreground">Explore the projects I've worked on and built.</TextVariants.Text>
 							</BlockContent>
 						</Block>
 					</Link>
@@ -66,10 +67,10 @@ export default function Page() {
 					<Link href="/contact" className="block">
 						<Block className="hover:shadow-lg transition-shadow h-full">
 							<BlockContent>
-								<Subheading className="mb-2">
+								<TextVariants.Subheading className="mb-2">
 									<Icon icon={Mail} /> Send me a message
-								</Subheading>
-								<Text className="text-muted-foreground">Got a question or want to collaborate? Let's connect.</Text>
+								</TextVariants.Subheading>
+								<TextVariants.Text className="text-muted-foreground">Got a question or want to collaborate? Let's connect.</TextVariants.Text>
 							</BlockContent>
 						</Block>
 					</Link>
@@ -77,10 +78,10 @@ export default function Page() {
 					<Link href="/blog" className="block">
 						<Block className="hover:shadow-lg transition-shadow h-full">
 							<BlockContent>
-								<Subheading className="mb-2">
+								<TextVariants.Subheading className="mb-2">
 									<Icon icon={Pencil} /> Read my blog
-								</Subheading>
-								<Text className="text-muted-foreground">I write about my regular experiences and explorations with tech.</Text>
+								</TextVariants.Subheading>
+								<TextVariants.Text className="text-muted-foreground">I write about my regular experiences and explorations with tech.</TextVariants.Text>
 							</BlockContent>
 						</Block>
 					</Link>
@@ -92,16 +93,16 @@ export default function Page() {
 				<Link href={latestPost?.path || '/blog'} className="block">
 					<Block className="hover:shadow-lg transition-shadow">
 						<BlockContent>
-							<Heading>
+							<TextVariants.Heading>
 								<Icon icon={FileText} /> Latest Post
-							</Heading>
+							</TextVariants.Heading>
 
 							{latestPost && (
 								<>
-									<Subheading>{latestPost.title}</Subheading>
+									<TextVariants.Subheading>{latestPost.title}</TextVariants.Subheading>
 
 									{latestPost.description && (
-										<Text>{latestPost.description}</Text>
+										<TextVariants.Text>{latestPost.description}</TextVariants.Text>
 									)}
 
 									<div className="flex items-center justify-between mt-4">
@@ -137,16 +138,16 @@ export default function Page() {
 
 			<Block>
 				<BlockContent>
-					<Heading>
+					<TextVariants.Heading>
 						<Icon icon={Palette} /> Theme System
-					</Heading>
-					<Text>
+					</TextVariants.Heading>
+					<TextVariants.Text>
 						This site features 5 dynamic themes that completely transform the appearance while maintaining functionality.
 						Each theme provides a unique visual experience showcasing different design approaches.
-					</Text>
-					<Text>
+					</TextVariants.Text>
+					<TextVariants.Text>
 						Use the settings button in the bottom-left corner to switch between Modern, Terminal, Neumorphic, NieR, and GNOME themes!
-					</Text>
+					</TextVariants.Text>
 				</BlockContent>
 			</Block>
 		</Content>

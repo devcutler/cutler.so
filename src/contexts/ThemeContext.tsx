@@ -1,21 +1,22 @@
-import { createContext, useContext, useEffect, useState } from 'react';
-import type { ReactNode } from 'react';
+import { useEffect, useState } from 'react';
+import type { ReactElement, ReactNode } from 'react';
 import type { ThemeSettings, ThemeType } from '@/types/theme';
 import { useMouse } from '@/hooks/useMouse';
+import { ThemeContext } from './useTheme';
 
-interface ThemeContextType {
+export interface ThemeContextType {
 	theme: ThemeType;
 	setTheme: (theme: ThemeType) => void;
 	themeClasses: string;
 }
 
-const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
+
 
 const defaultSettings: ThemeSettings = {
 	theme: 'modern',
 };
 
-export function ThemeProvider({ children }: { children: ReactNode; }) {
+export function ThemeProvider({ children }: { children: ReactNode; }): ReactElement {
 	const [ settings, setSettings ] = useState<ThemeSettings>(() => {
 		const initialSettings = { ...defaultSettings };
     
@@ -52,11 +53,11 @@ export function ThemeProvider({ children }: { children: ReactNode; }) {
 
 	useMouse('.card', settings.theme === 'modern');
 
-	const setTheme = (theme: ThemeType) => {
+	const setTheme = (theme: ThemeType): void => {
 		setSettings(prev => ({ ...prev, theme }));
 	};
 
-	const getThemeClasses = () => {
+	const getThemeClasses = (): string => {
 		const base = 'transition-colors duration-300';
 		const themeClass = `theme-${settings.theme}`;
 		return `${base} ${themeClass}`;
@@ -73,12 +74,4 @@ export function ThemeProvider({ children }: { children: ReactNode; }) {
 			{children}
 		</ThemeContext.Provider>
 	);
-}
-
-export function useTheme() {
-	const context = useContext(ThemeContext);
-	if (context === undefined) {
-		throw new Error('useTheme must be used within a ThemeProvider');
-	}
-	return context;
 }

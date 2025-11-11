@@ -1,12 +1,13 @@
 import { Content } from '@/components/Content';
 import { Section } from '@/components/Section';
 import { Block, BlockContent } from '@/components/Block';
-import { Title, Text, Heading, Subheading } from '@/components/Text';
+import { TextVariants } from '@/components/Text';
 import { Badge } from '@/components/Badge';
-import { MarkdownRenderer } from '@/components/MarkdownRenderer';
 import { Github, Globe, ArrowLeft } from 'lucide-react';
+import type { ReactElement } from 'react';
+import { MarkdownRenderer } from '@/components/MarkdownRenderer';
 
-export default function Page() {
+export default function Page(): ReactElement {
 
 	return (
 		<Content>
@@ -22,7 +23,7 @@ export default function Page() {
 				</div>
 
 				<header className="mb-8">
-					<Title>cutler.so</Title>
+					<TextVariants.Title>cutler.so</TextVariants.Title>
 					<div className="flex items-center gap-4 mt-4">
 						<span className="text-sm font-medium text-blue-600">
 							Personal
@@ -51,12 +52,12 @@ export default function Page() {
 				{/* Overview */}
 				<Block>
 					<BlockContent>
-						<Heading>Overview</Heading>
-						<Text>
+						<TextVariants.Heading>Overview</TextVariants.Heading>
+						<TextVariants.Text>
 							This personal website built with Vike, React, and TypeScript. Features SSG, multiple themes, and a markdown-based blog.
-						</Text>
+						</TextVariants.Text>
 
-						<Subheading>Technologies</Subheading>
+						<TextVariants.Subheading>Technologies</TextVariants.Subheading>
 						<div className="flex flex-wrap gap-2">
 							<Badge variant="small">React</Badge>
 							<Badge variant="small">TypeScript</Badge>
@@ -68,25 +69,25 @@ export default function Page() {
 			</Section>
 
 			<Section>
-				<Heading>About This Project</Heading>
+				<TextVariants.Heading>About This Project</TextVariants.Heading>
         
-				<Text>
+				<TextVariants.Text>
 					This site uses Vike as the meta-framework, which provides file-based routing and static site generation
 					on top of Vite. Each page is pre-rendered at build time through Vike's SSG, generating static
 					HTML files while preserving React's client-side interactivity for dynamic components. It specifically
 					only bundles necessary code, to keep bundle sizes down.
-				</Text>
+				</TextVariants.Text>
 
-				<Text>
+				<TextVariants.Text>
 					The configuration leverages Vike's +onBeforePrerenderStart hooks to collect page routes and data at
 					build time. For the blog system, markdown files in the /content directory are processed during the
 					build step, with frontmatter parsed using gray-matter and content rendered through a remark/rehype
 					pipeline that includes GitHub Flavored Markdown and syntax highlighting.
-				</Text>
+				</TextVariants.Text>
 
-				<Text>
+				<TextVariants.Text>
 					The SSG setup is configured in the root +config.ts file which enables prerendering for all pages:
-				</Text>
+				</TextVariants.Text>
 
 				<MarkdownRenderer content={`\`\`\`typescript
 export default {
@@ -95,10 +96,10 @@ export default {
 } satisfies Config;
 \`\`\``} />
 
-				<Text>
+				<TextVariants.Text>
 					Individual pages define their data requirements through +data.ts files that run at build time.
 					The blog pages use +onBeforePrerenderStart to generate routes dynamically from the markdown files:
-				</Text>
+				</TextVariants.Text>
 
 				<MarkdownRenderer content={`\`\`\`typescript
 export async function onBeforePrerenderStart(): Promise<string[]> {
@@ -111,10 +112,10 @@ export async function onBeforePrerenderStart(): Promise<string[]> {
 }
 \`\`\``} />
 
-				<Text>
+				<TextVariants.Text>
 					Data fetching in Vike follows a pattern where +data.ts files export functions that run at build time
 					(for SSG) or request time (for SSR). Components then access this data through the useData() hook:
-				</Text>
+				</TextVariants.Text>
 
 				<MarkdownRenderer content={`\`\`\`typescript
 // +data.ts - runs at build time
@@ -141,11 +142,11 @@ export default function Page() {
 }
 \`\`\``} />
 
-				<Text>
+				<TextVariants.Text>
 					The theming system uses CSS custom properties and a React context provider that persists theme
 					selection to localStorage. Theme files are loaded dynamically and CSS variables are updated to
 					switch between the different visual styles without requiring page reloads.
-				</Text>
+				</TextVariants.Text>
 			</Section>
 
 		</Content>

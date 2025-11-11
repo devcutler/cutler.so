@@ -3,17 +3,18 @@ import { Content } from '@/components/Content';
 import { Section } from '@/components/Section';
 import { Block, BlockContent } from '@/components/Block';
 import { Grid } from '@/components/Grid';
-import { Title, Text } from '@/components/Text';
+import { TextVariants } from '@/components/Text';
+import type { ReactElement } from 'react';
 
-export default function Page() {
+export default function Page(): ReactElement {
 	return (
 		<Content>
 			<Section>
 				<header>
-					<Title>My Projects</Title>
-					<Text>
+					<TextVariants.Title>My Projects</TextVariants.Title>
+					<TextVariants.Text>
 						A collection of projects I've worked on, from personal experiments to production applications.
-					</Text>
+					</TextVariants.Text>
 				</header>
         
 				<Grid width={2}>
@@ -29,8 +30,8 @@ export default function Page() {
           
 					<Block className="h-full flex flex-col items-center justify-center text-center">
 						<BlockContent>
-							<Text>More projects coming soon!</Text>
-							<Text>Stay tuned for updates</Text>
+							<TextVariants.Text>More projects coming soon!</TextVariants.Text>
+							<TextVariants.Text>Stay tuned for updates</TextVariants.Text>
 						</BlockContent>
 					</Block>
 				</Grid>

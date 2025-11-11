@@ -1,7 +1,6 @@
 import { usePageContext } from 'vike-react/usePageContext';
-import { useTheme } from '@/contexts/ThemeContext';
 import { cn } from 'clsx-for-tailwind';
-import type { ReactNode } from 'react';
+import type { ReactElement, ReactNode } from 'react';
 
 interface NavLinkProps {
 	href: string;
@@ -9,7 +8,7 @@ interface NavLinkProps {
 	className?: string;
 }
 
-export function NavLink({ href, children, className }: NavLinkProps) {
+export function NavLink({ href, children, className }: NavLinkProps): ReactElement {
 	const pageContext = usePageContext();
 	const { urlPathname } = pageContext;
 

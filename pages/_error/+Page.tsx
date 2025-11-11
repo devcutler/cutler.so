@@ -2,9 +2,10 @@ import { usePageContext } from 'vike-react/usePageContext';
 import { Link } from '@/components/Link';
 import { Content } from '@/components/Content';
 import { Section } from '@/components/Section';
-import { Title, Heading, Text } from '@/components/Text';
+import { TextVariants } from '@/components/Text';
+import type { ReactElement } from 'react';
 
-export default function Page() {
+export default function Page(): ReactElement {
 	const pageContext = usePageContext();
   
 	let title: string;
@@ -33,13 +34,13 @@ export default function Page() {
 		<Content>
 			<Section className="min-h-[60vh] flex items-center justify-center">
 				<div className="text-center">
-					<Title className="text-6xl font-bold mb-4">{title}</Title>
-					<Heading className="mb-6">
+					<TextVariants.Title className="text-6xl font-bold mb-4">{title}</TextVariants.Title>
+					<TextVariants.Heading className="mb-6">
 						{is404 ? 'Page Not Found' : 'Error'}
-					</Heading>
-					<Text className="mb-8 max-w-md mx-auto">
+					</TextVariants.Heading>
+					<TextVariants.Text className="mb-8 max-w-md mx-auto">
 						{message}
-					</Text>
+					</TextVariants.Text>
 					<Link href="/" className="inline-block px-6 py-3 button">
 						Go Home
 					</Link>

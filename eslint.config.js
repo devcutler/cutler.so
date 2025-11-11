@@ -7,7 +7,7 @@ import stylistic from '@stylistic/eslint-plugin';
 
 export default [
 	{
-		ignores: [ 'dist/**', 'node_modules/**', '.vike/**' ],
+		ignores: [ 'dist/**', 'node_modules/**', '.vike/**', 'libs/**' ],
 	},
 	{
 		files: [ '**/*.{js,jsx,ts,tsx}' ],
@@ -16,9 +16,7 @@ export default [
 			parserOptions: {
 				ecmaVersion: 'latest',
 				sourceType: 'module',
-				ecmaFeatures: {
-					jsx: true,
-				},
+				ecmaFeatures: { jsx: true },
 			},
 		},
 		plugins: {
@@ -29,9 +27,7 @@ export default [
 			'@stylistic': stylistic,
 		},
 		settings: {
-			react: {
-				version: 'detect',
-			},
+			react: { version: 'detect' },
 		},
 		rules: {
 			'no-debugger': 'warn',
@@ -65,9 +61,7 @@ export default [
 			],
 			'@typescript-eslint/consistent-type-imports': [
 				'warn',
-				{
-					prefer: 'type-imports',
-				},
+				{ prefer: 'type-imports' },
 			],
 
 			'no-unused-vars': 'off',

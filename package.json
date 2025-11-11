@@ -7,6 +7,7 @@
     "lint:fix": "eslint . --fix"
   },
   "dependencies": {
+    "@babel/eslint-parser": "^7.28.5",
     "@cutler/icons": "workspace:*",
     "@tailwindcss/typography": "^0.5.16",
     "@vitejs/plugin-react": "^4.7.0",

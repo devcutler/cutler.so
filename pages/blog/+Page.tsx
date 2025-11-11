@@ -1,12 +1,13 @@
 import { useData } from 'vike-react/useData';
 import { Link } from '@/components/Link';
 import type { BlogEntry } from '@/types/blog';
+import type { ReactElement } from 'react';
 
 interface PageData {
 	blogPosts: BlogEntry[];
 }
 
-export default function Page() {
+export default function Page(): ReactElement {
 	const { blogPosts } = useData<PageData>();
 
 	return (

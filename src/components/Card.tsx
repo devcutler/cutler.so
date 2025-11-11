@@ -1,12 +1,12 @@
-import type { ReactNode } from 'react';
-import { useTheme } from '@/contexts/ThemeContext';
+import { useTheme } from '@/contexts/useTheme';
+import type { ReactElement, ReactNode } from 'react';
 
 interface CardProps {
 	children: ReactNode;
 	className?: string;
 }
 
-export function Card({ children, className = '' }: CardProps) {
+export function Card({ children, className = '' }: CardProps): ReactElement {
 	const { theme } = useTheme();
   
 	return (

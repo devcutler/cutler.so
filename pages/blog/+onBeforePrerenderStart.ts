@@ -1,3 +1,3 @@
-export async function onBeforePrerenderStart() {
+export async function onBeforePrerenderStart(): Promise<string[]> {
 	return [ '/blog' ];
 }

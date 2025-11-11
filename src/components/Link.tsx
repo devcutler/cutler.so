@@ -1,5 +1,5 @@
 import { usePageContext } from 'vike-react/usePageContext';
-import type { ReactNode } from 'react';
+import type { ReactElement, ReactNode } from 'react';
 
 interface LinkProps {
 	href: string;
@@ -7,7 +7,7 @@ interface LinkProps {
 	className?: string;
 }
 
-export function Link({ href, children, className = '' }: LinkProps) {
+export function Link({ href, children, className = '' }: LinkProps): ReactElement {
 	const pageContext = usePageContext();
 	const { urlPathname } = pageContext;
 	const isActive = href === '/' ? urlPathname === href : urlPathname.startsWith(href);

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text } from './Text';
+import { TextVariants } from './Text';
 
 interface ListItemProps {
 	children: React.ReactNode;
@@ -23,7 +23,7 @@ export const List: React.FC<ListProps> = ({ children, bullet: Bullet, className 
 			{items.map((item, index) => (
 				<li key={index} className="flex items-start gap-2">
 					{Bullet ? <Bullet /> : <span>•</span>}
-					<Text>{item}</Text>
+					<TextVariants.Text>{item}</TextVariants.Text>
 				</li>
 			))}
 		</ul>

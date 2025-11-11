@@ -1,8 +1,8 @@
-import { useState } from 'react';
-import { useTheme } from '@/contexts/ThemeContext';
+import { useState, type ReactElement } from 'react';
 import { useUmami } from '@/hooks/useUmami';
 import { Settings, Check } from 'lucide-react';
 import type { ThemeType } from '@/types/theme';
+import { useTheme } from '@/contexts/useTheme';
 
 interface ThemeOption {
 	name: ThemeType;
@@ -38,17 +38,17 @@ const themeOptions: ThemeOption[] = [
 	},
 ];
 
-export function SettingsPanel() {
+export function SettingsPanel(): ReactElement {
 	const [ isOpen, setIsOpen ] = useState(false);
 	const { theme, setTheme } = useTheme();
 	const { track } = useUmami();
 
-	const handleThemeChange = (newTheme: ThemeType) => {
+	const handleThemeChange = (newTheme: ThemeType): void => {
 		track('Theme Change', { theme: newTheme });
 		setTheme(newTheme);
 	};
 
-	const getSettingsButtonClasses = () => {
+	const getSettingsButtonClasses = (): string => {
 		const baseClasses = 'fixed bottom-4 left-4 z-[9999] w-12 h-12 text-base cursor-pointer transition-all duration-300 flex items-center justify-center';
     
 		switch (theme) {
@@ -163,8 +163,8 @@ interface ThemePreviewButtonProps {
 	onClick: () => void;
 }
 
-function ThemePreviewButton({ theme, isSelected, onClick }: ThemePreviewButtonProps) {
-	const getThemeClasses = () => {
+function ThemePreviewButton({ theme, isSelected, onClick }: ThemePreviewButtonProps): ReactElement {
+	const getThemeClasses = (): string => {
 		const baseClasses = 'w-full p-2 cursor-pointer transition-all duration-200 text-xs text-left flex justify-between items-center hover:opacity-80';
 
 		switch (theme.name) {

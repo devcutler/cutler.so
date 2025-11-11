@@ -1,7 +1,12 @@
 import React from 'react';
 
+interface IconComponentProps {
+	className?: string;
+	size?: number;
+}
+
 interface IconProps {
-	icon: React.ComponentType<any>;
+	icon: React.ComponentType<IconComponentProps>;
 	className?: string;
 	size?: number;
 }

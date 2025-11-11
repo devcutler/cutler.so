@@ -1,6 +1,7 @@
 import { usePageContext } from 'vike-react/usePageContext';
 import { TerminalCommand } from './TerminalCommand';
-import { Secondary } from './Text';
+import { TextVariants } from './Text';
+import type { ReactElement } from 'react';
 
 interface TerminalPromptProps {
 	command?: string;
@@ -10,11 +11,11 @@ interface TerminalPromptProps {
 export function TerminalPrompt({
 	command = '',
 	className = '',
-}: TerminalPromptProps) {
+}: TerminalPromptProps): ReactElement {
 	const pageContext = usePageContext();
 	const location = pageContext.urlPathname;
 
-	const getTerminalPath = () => {
+	const getTerminalPath = (): string => {
 		if (location === '/') return '~';
 		return `~${location}`;
 	};
@@ -29,7 +30,7 @@ export function TerminalPrompt({
 				{getTerminalPath()}
 			</span>
 			<span className="ml-2">
-				<Secondary>$</Secondary>
+				<TextVariants.Secondary>$</TextVariants.Secondary>
 			</span>
       
 			{command && (

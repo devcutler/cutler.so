@@ -1,7 +1,8 @@
 import { TerminalPrompt } from './TerminalPrompt.js';
 import { NavLink } from './NavLink.js';
+import type { ReactElement } from 'react';
 
-export function Header() {
+export function Header(): ReactElement {
 	return (
 		<header className="header">
 			<div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

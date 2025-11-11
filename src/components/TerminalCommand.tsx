@@ -1,9 +1,11 @@
+import type { ReactElement } from 'react';
+
 interface TerminalCommandProps {
 	children: string;
 	className?: string;
 }
 
-export function TerminalCommand({ children, className = '' }: TerminalCommandProps) {
+export function TerminalCommand({ children, className = '' }: TerminalCommandProps): ReactElement {
 	const tokens = children.split(' ');
   
 	return (

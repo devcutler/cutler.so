@@ -2,8 +2,9 @@ import { useData } from 'vike-react/useData';
 import type { BlogPost } from './+data';
 import '@/styles/highlight.css';
 import { MarkdownRenderer } from '@/components/MarkdownRenderer';
+import type { ReactElement } from 'react';
 
-export default function Page() {
+export default function Page(): ReactElement {
 	const { title, content, date, tags } = useData<BlogPost>();
 
 	return (

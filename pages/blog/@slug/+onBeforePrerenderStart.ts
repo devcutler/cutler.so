@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 
-export async function onBeforePrerenderStart() {
+export async function onBeforePrerenderStart(): Promise<string[]> {
 	const contentDir = path.join(process.cwd(), 'content');
   
 	const files = fs.readdirSync(contentDir)

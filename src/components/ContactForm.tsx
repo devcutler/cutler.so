@@ -1,5 +1,6 @@
+import type { ReactElement } from 'react';
 import { useState } from 'react';
-import { Send, CheckCircle, AlertCircle, Smile } from 'lucide-react';
+import { Send, CheckCircle, AlertCircle } from 'lucide-react';
 import { Input, TextArea } from './Input';
 
 interface ContactFormData {
@@ -12,7 +13,7 @@ interface ContactFormData {
 type SubmissionStatus = 'idle' | 'submitting' | 'success' | 'error';
 
 
-export function ContactForm() {
+export function ContactForm(): ReactElement {
 	const [ formData, setFormData ] = useState<ContactFormData>({
 		name: '',
 		email: '',
@@ -22,7 +23,7 @@ export function ContactForm() {
 	const [ status, setStatus ] = useState<SubmissionStatus>('idle');
 	const [ errorMessage, setErrorMessage ] = useState('');
 
-	const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+	const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>): void => {
 		const { name, value } = e.target;
 		setFormData(prev => ({
 			...prev,
@@ -30,7 +31,7 @@ export function ContactForm() {
 		}));
 	};
 
-	const handleSubmit = async (e: React.FormEvent) => {
+	const handleSubmit = async (e: React.FormEvent): Promise<void> => {
 		e.preventDefault();
 
 		setStatus('submitting');

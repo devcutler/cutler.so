@@ -3,7 +3,11 @@ import path from 'path';
 import matter from 'gray-matter';
 import type { BlogEntry } from '@/types/blog';
 
-export async function data() {
+interface Data {
+	blogPosts: BlogEntry[]
+}
+
+export async function data(): Promise<Data> {
 	const contentDir = path.join(process.cwd(), 'content');
   
 	if (!fs.existsSync(contentDir)) {

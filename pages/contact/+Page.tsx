@@ -1,7 +1,8 @@
 import { ContactForm } from '@/components/ContactForm';
 import { Smile } from 'lucide-react';
+import type { ReactElement } from 'react';
 
-export default function Page() {
+export default function Page(): ReactElement {
 	return (
 		<main className="container mx-auto px-4 py-12 max-w-2xl">
 			<header className="mb-8">
