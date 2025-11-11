@@ -1,9 +1,9 @@
-export function Head() {
-  return (
-    <>
-      <script
-        dangerouslySetInnerHTML={{
-          __html: `
+export function Head(): JSX.Element {
+	return (
+		<>
+			<script
+				dangerouslySetInnerHTML={{
+					__html: `
 (function() {
   try {
     const saved = localStorage.getItem('theme-settings');
@@ -19,9 +19,9 @@ export function Head() {
     document.documentElement.setAttribute('data-theme', 'modern');
   }
 })();
-          `
-        }}
-      />
-    </>
-  );
+          `,
+				}}
+			/>
+		</>
+	);
 }

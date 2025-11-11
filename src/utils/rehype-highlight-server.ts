@@ -11,35 +11,35 @@ hljs.registerLanguage('tsx', typescript);
 hljs.registerLanguage('bash', bash);
 
 export default function rehypeHighlightServer() {
-  return (tree: any) => {
-    visit(tree, 'element', (node) => {
-      if (node.tagName === 'pre') {
-        const codeNode = node.children?.find((child: any) => child.tagName === 'code');
-        if (codeNode && codeNode.children?.[0]?.type === 'text') {
-          const code = codeNode.children[0].value;
-          const className = codeNode.properties?.className?.[0] || '';
-          const language = className.replace('language-', '') || 'text';
+	return (tree: any) => {
+		visit(tree, 'element', (node) => {
+			if (node.tagName === 'pre') {
+				const codeNode = node.children?.find((child: any) => child.tagName === 'code');
+				if (codeNode && codeNode.children?.[0]?.type === 'text') {
+					const code = codeNode.children[0].value;
+					const className = codeNode.properties?.className?.[0] || '';
+					const language = className.replace('language-', '') || 'text';
 
-          try {
-            let highlightedCode;
-            if (language && language !== 'text' && hljs.getLanguage(language)) {
-              const result = hljs.highlight(code, { language });
-              highlightedCode = result.value;
-            } else {
-              highlightedCode = code;
-            }
+					try {
+						let highlightedCode;
+						if (language && language !== 'text' && hljs.getLanguage(language)) {
+							const result = hljs.highlight(code, { language });
+							highlightedCode = result.value;
+						} else {
+							highlightedCode = code;
+						}
 
-            codeNode.children = [];
-            codeNode.properties = {
-              ...codeNode.properties,
-              className: ['hljs', `language-${language}`],
-              dangerouslySetInnerHTML: { __html: highlightedCode }
-            };
-          } catch (error) {
-            console.warn('Highlight.js failed:', error);
-                      }
-        }
-      }
-    });
-  };
+						codeNode.children = [];
+						codeNode.properties = {
+							...codeNode.properties,
+							className: [ 'hljs', `language-${language}` ],
+							dangerouslySetInnerHTML: { __html: highlightedCode },
+						};
+					} catch (error) {
+						console.warn('Highlight.js failed:', error);
+					}
+				}
+			}
+		});
+	};
 }
