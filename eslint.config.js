@@ -34,7 +34,6 @@ export default [
 			},
 		},
 		rules: {
-			'no-console': 'warn',
 			'no-debugger': 'warn',
 
 			'react/jsx-uses-react': 'error',
