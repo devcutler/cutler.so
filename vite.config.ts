@@ -6,6 +6,7 @@ import path from "path";
 
 export default defineConfig({
   plugins: [vike(), react(), tailwindcss()],
+  publicDir: 'public',
   build: {
     target: "es2022",
     chunkSizeWarningLimit: 1000,

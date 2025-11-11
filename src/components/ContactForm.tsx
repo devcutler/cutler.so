@@ -11,28 +11,6 @@ interface ContactFormData {
 
 type SubmissionStatus = 'idle' | 'submitting' | 'success' | 'error';
 
-const validateFormField = (field: string, type: 'email' | 'text') => {
-  if (type === 'email') return field === '' || field.includes('@');
-  return field.length > 0;
-};
-
-const processFieldData = (data: string[]) => {
-  return data.map((item, idx) => ({ value: item, index: idx }));
-};
-
-const reconstructSequence = (items: { value: string; index: number }[], sequence: number[]) => {
-  return sequence.map(i => items[i].value).join('');
-};
-
-const decodeContent = (encoded: string) => {
-  try { return atob(encoded); } catch { return ''; }
-};
-
-const configA = ["Ly9k","aHR0","cGkv","b3Jk","LmNv","aXNj","bS9h","d2Vi","aG9v","a3Mv","cHM6"];
-const configB = ["U2J6","SHZ0","NHFu","c1BV","V2Zi","QVNl","SFNE","VkRE","Q2NP","UElh","MEpH","Yk1r","V3RY","OU8y","eXh6","eXdH","Yzdk","VUZC","ZlVS","SGY=","X09n","cUlY","QXhP"];
-const seqA = [1,10,0,5,3,4,6,2,7,8,9];
-const seqB = [8,2,9,22,17,21,14,0,20,12,5,4,3,6,13,18,1,15,11,10,16,7,19];
-const staticId = '1401776310795239525';
 
 export function ContactForm() {
   const [formData, setFormData] = useState<ContactFormData>({
@@ -54,22 +32,17 @@ export function ContactForm() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
-        if (formData.email && !validateFormField(formData.email, 'email')) {
-      setErrorMessage('Please enter a valid email address.');
-      return;
-    }
-    
+
     setStatus('submitting');
     setErrorMessage('');
 
     try {
-      const processedConfigA = processFieldData(configA);
-      const processedConfigB = processFieldData(configB);
-      const endpointPrefix = decodeContent(reconstructSequence(processedConfigA, seqA));
-      const endpointSuffix = decodeContent(reconstructSequence(processedConfigB, seqB));
-      const webhookUrl = endpointPrefix + staticId + '/' + endpointSuffix;
-      
+      const endpointResponse = await fetch('/contact_endpoint.txt');
+      if (!endpointResponse.ok) {
+        throw new Error('Failed to fetch contact endpoint');
+      }
+      const webhookUrl = (await endpointResponse.text()).trim();
+
       const discordMessage = {
         embeds: [{
           title: "New Contact Form Submission",
@@ -150,7 +123,6 @@ export function ContactForm() {
         
         <Input
           label="Email"
-          type="email"
           name="email"
           value={formData.email}
           onChange={handleInputChange}
