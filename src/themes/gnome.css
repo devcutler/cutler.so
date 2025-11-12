@@ -9,6 +9,7 @@
   --accent-color: #ad7fa8;
   --border-color: #75507b;
   --error-color: #cc0000;
+  --link-color: #ad7fa8;
   
   background-color: var(--bg-primary);
   color: var(--text-primary);

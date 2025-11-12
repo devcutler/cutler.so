@@ -3,12 +3,13 @@
   --bg-primary: #000000;
   --bg-secondary: #000000;
   --bg-tertiary: #000000;
-  --text-primary: #ffffff;  
-  --text-secondary: #e0e0e0;  
-  --text-muted: #999999;  
-  --accent-color: #ffffff;  
+  --text-primary: #ffffff;
+  --text-secondary: #e0e0e0;
+  --text-muted: #999999;
+  --accent-color: #ffffff;
   --border-color: #808080;
   --error-color: #ff0000;
+  --link-color: #ffffff;
   
   
   --code-bg: #000000;
@@ -55,7 +56,8 @@
 
 
 .terminal a {
-  color: var(--text-secondary);  
+  color: var(--text-secondary);
+  text-decoration: underline;
 }
 
 
@@ -64,22 +66,23 @@
 }
 
 .terminal a.block:hover * {
-  color: inherit;  
+  color: inherit;
 }
 
 
 .terminal a:not(.block):hover {
-  color: var(--text-muted);  
+  color: var(--text-muted);
 }
 
 
 .terminal a.font-medium {
-  color: var(--text-primary);  
+  color: var(--text-primary);
 }
 
 
 .terminal nav a {
-  font-family: inherit;  
+  font-family: inherit;
+  text-decoration: none;
 }
 
 .terminal .header {

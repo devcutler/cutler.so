@@ -2,6 +2,7 @@ import hljs from 'highlight.js/lib/core';
 import javascript from 'highlight.js/lib/languages/javascript';
 import typescript from 'highlight.js/lib/languages/typescript';
 import bash from 'highlight.js/lib/languages/bash';
+import csharp from 'highlight.js/lib/languages/csharp';
 import type { ReactElement } from 'react';
 import { useMemo } from 'react';
 import { remark } from 'remark';
@@ -16,6 +17,7 @@ hljs.registerLanguage('typescript', typescript);
 hljs.registerLanguage('jsx', javascript);
 hljs.registerLanguage('tsx', typescript);
 hljs.registerLanguage('bash', bash);
+hljs.registerLanguage('csharp', csharp);
 
 
 interface MarkdownRendererProps {

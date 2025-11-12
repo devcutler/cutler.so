@@ -1,7 +1,6 @@
 import { ProjectCard } from './components/ProjectCard';
 import { Content } from '@/components/Content';
 import { Section } from '@/components/Section';
-import { Block, BlockContent } from '@/components/Block';
 import { Grid } from '@/components/Grid';
 import { TextVariants } from '@/components/Text';
 import type { ReactElement } from 'react';
@@ -27,13 +26,16 @@ export default function Page(): ReactElement {
 							type: 'Personal',
 						}}
 					/>
-          
-					<Block className="h-full flex flex-col items-center justify-center text-center">
-						<BlockContent>
-							<TextVariants.Text>More projects coming soon!</TextVariants.Text>
-							<TextVariants.Text>Stay tuned for updates</TextVariants.Text>
-						</BlockContent>
-					</Block>
+
+					<ProjectCard
+						project={{
+							name: 'Match-3 Roguelike',
+							description: 'A match-3 roguelike inspired by Puzzle Quest, built in C# with Raylib. Features turn-based combat, procedural encounters, and equipment progression.',
+							technologies: [ 'C#', '.NET 8', 'Raylib', 'Game Development' ],
+							link: '/projects/match3',
+							type: 'Personal',
+						}}
+					/>
 				</Grid>
 			</Section>
 		</Content>

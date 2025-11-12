@@ -7,7 +7,7 @@ import stylistic from '@stylistic/eslint-plugin';
 
 export default [
 	{
-		ignores: [ 'dist/**', 'node_modules/**', '.vike/**', 'libs/**' ],
+		ignores: [ 'dist/**', 'node_modules/**', '.vike/**', 'libs/**', 'public/**' ],
 	},
 	{
 		files: [ '**/*.{js,jsx,ts,tsx}' ],

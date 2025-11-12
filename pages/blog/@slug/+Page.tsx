@@ -2,20 +2,39 @@ import { useData } from 'vike-react/useData';
 import type { BlogPost } from './+data';
 import '@/styles/highlight.css';
 import { MarkdownRenderer } from '@/components/MarkdownRenderer';
+import { TextVariants } from '@/components/Text';
+import { Bio } from '@/components/Bio';
 import type { ReactElement } from 'react';
 
 export default function Page(): ReactElement {
-	const { title, content, date, tags } = useData<BlogPost>();
+	const { title, description, content, date, tags } = useData<BlogPost>();
 
 	return (
 		<article className="max-w-4xl mx-auto px-4 py-8">
-			<header className="mb-8">
-				<h1 className="text-4xl font-bold mb-4">{title}</h1>
-				{date && (
-					<time className="text-gray-600 text-sm">
-						{new Date(date).toLocaleDateString()}
-					</time>
+			<header className="mb-8 pb-6 border-b" style={{ borderColor: 'var(--border-color)' }}>
+				<TextVariants.Heading className="mb-2">{title}</TextVariants.Heading>
+				{description && (
+					<TextVariants.Text className="mb-3">{description}</TextVariants.Text>
 				)}
+				<div className="flex items-center gap-3 text-sm">
+					{date && (
+						<TextVariants.Muted>
+							{date}
+						</TextVariants.Muted>
+					)}
+					{tags && tags.length > 0 && (
+						<>
+							<TextVariants.Muted>•</TextVariants.Muted>
+							<div className="flex flex-wrap gap-2">
+								{tags.map((tag) => (
+									<TextVariants.Muted key={tag}>
+										#{tag}
+									</TextVariants.Muted>
+								))}
+							</div>
+						</>
+					)}
+				</div>
 			</header>
 
 			<MarkdownRenderer
@@ -23,20 +42,7 @@ export default function Page(): ReactElement {
 				content={content}
 			/>
 
-			{tags && tags.length > 0 && (
-				<footer className="mt-8 pt-8 border-t border-gray-200">
-					<div className="flex flex-wrap gap-2">
-						{tags.map((tag) => (
-							<span
-								key={tag}
-								className="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full"
-							>
-								{tag}
-							</span>
-						))}
-					</div>
-				</footer>
-			)}
+			<Bio />
 		</article>
 	);
 }

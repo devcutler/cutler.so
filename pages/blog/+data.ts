@@ -27,7 +27,7 @@ export async function data(): Promise<Data> {
 				slug,
 				title: frontmatter.title || 'Untitled',
 				description: frontmatter.description || '',
-				date: new Date(frontmatter.date),
+				date: frontmatter.date,
 				tags: frontmatter.tags || [],
 				content,
 				path: `/blog/${slug}`,
@@ -38,7 +38,7 @@ export async function data(): Promise<Data> {
 		})
 		.sort((a, b) => {
 			if (a.date && b.date) {
-				return b.date.getTime() - a.date.getTime();
+				return new Date(b.date).getTime() - new Date(a.date).getTime();
 			}
 			if (a.date && !b.date) return -1;
 			if (!a.date && b.date) return 1;

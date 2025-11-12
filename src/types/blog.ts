@@ -2,7 +2,7 @@ export interface BlogEntry {
 	slug: string;
 	title: string;
 	description: string;
-	date: Date;
+	date: string;
 	tags?: string[];
 	content: string;
 	path: string;

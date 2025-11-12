@@ -4,7 +4,7 @@ import type { ReactElement } from 'react';
 
 const typeColors = {
 	'Personal': 'text-blue-600',
-	'Professional': 'text-green-600',
+	'Enterprise': 'text-green-600',
 	'Freelance': 'text-purple-600',
 } as const;
 

@@ -1,5 +1,6 @@
 import { useData } from 'vike-react/useData';
 import { Link } from '@/components/Link';
+import { TextVariants } from '@/components/Text';
 import type { BlogEntry } from '@/types/blog';
 import type { ReactElement } from 'react';
 
@@ -12,35 +13,29 @@ export default function Page(): ReactElement {
 
 	return (
 		<div>
-			<h1 className="text-4xl font-bold mb-8">Blog</h1>
+			<TextVariants.Title>Blog</TextVariants.Title>
 
 			{blogPosts.length === 0 ? (
 				<div className="text-center py-12">
-					<p className="text-lg mb-4">No blog posts found.</p>
-					<p className="text-sm">Add some markdown files to the content directory to get started.</p>
+					<TextVariants.Text className="mb-4">No blog posts found.</TextVariants.Text>
+					<TextVariants.Muted>Add some markdown files to the content directory to get started.</TextVariants.Muted>
 				</div>
 			) : (
 				<div className="space-y-8">
 					{blogPosts.map((post) => (
 						<article key={post.slug} className="card p-6">
-							<h2 className="text-2xl font-semibold mb-3">
+							<TextVariants.Heading className="mb-3">
 								<Link href={post.path} className="hover:opacity-80 transition-opacity">
 									{post.title}
 								</Link>
-							</h2>
+							</TextVariants.Heading>
 
 							<div className="flex items-center gap-4 text-sm mb-4">
 								{post.date && (
-									<time dateTime={post.date.toISOString()}>
-										{post.date.toLocaleDateString('en-US', {
-											year: 'numeric',
-											month: 'long',
-											day: 'numeric',
-										})}
-									</time>
+									<TextVariants.Muted>
+										{post.date}
+									</TextVariants.Muted>
 								)}
-
-								<span>{post.length} characters</span>
 
 								{post.tags && post.tags.length > 0 && (
 									<div className="flex gap-2">
@@ -57,9 +52,9 @@ export default function Page(): ReactElement {
 							</div>
 
 							{post.description && (
-								<p className="mb-4 leading-relaxed">
+								<TextVariants.Text className="mb-4">
 									{post.description}
-								</p>
+								</TextVariants.Text>
 							)}
 
 							<Link href={post.path} className="inline-flex items-center text-sm font-medium">
